@@ -67,10 +67,46 @@
       }
     }
   },
+    "service-promo": {
+      "type": "service-promo",
+      "blocks": {
+        "starter": {
+          "type": "package_slot",
+          "settings": {
+            "product": "starter-package"
+          }
+        },
+        "standard": {
+          "type": "package_slot",
+          "settings": {
+            "product": "standard-package"
+          }
+        },
+        "premium": {
+          "type": "package_slot",
+          "settings": {
+            "product": "premium-package"
+          }
+        }
+      },
+      "block_order": [
+        "starter",
+        "standard",
+        "premium"
+      ],
+      "settings": {
+        "title": "INITIATE NEW OPERATION",
+        "subtitle": "Select your visual mission.",
+        "cta_text": "REQUEST CUSTOM BRIEFING",
+        "cta_link": "/pages/contact"
+      }
+    }
+  },
   "order": [
     "hero",
     "instagram_embed_YgdXMj",
     "grid",
-    "trend"
+    "trend",
+    "service-promo"
   ]
 }
