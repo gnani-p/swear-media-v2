@@ -1,0 +1,129 @@
+{% comment %}
+  Homepage Section: Service Package Promo Grid
+  Role: Displays 3 manually selected service products (Starter, Standard, Premium)
+  for immediate booking or link-out.
+{% endcomment %}
+
+<div class="service-promo-section container" style="padding: 6rem 20px; border-top: 1px solid var(--swear-gray);">
+  
+  <!-- Header -->
+  <div class="text-center mb-12">
+    <h2 class="font-stencil uppercase" style="font-size: 3rem; margin-bottom: 0.5rem;">{{ section.settings.title }}</h2>
+    <p class="font-mono text-concrete text-lg">{{ section.settings.subtitle }}</p>
+  </div>
+
+  <!-- The Three-Column Grid -->
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+    
+    {% for block in section.blocks %}
+      {% assign product = block.settings.product %}
+
+      {% comment %} Ensure a product is selected and available {% endcomment %}
+      {% if product != blank %}
+        <a href="{{ product.url }}" class="package-card relative block p-6 border border-swear-gray bg-swear-black shadow-lg hover:border-accent transition-all duration-300">
+          
+          <!-- Package Name -->
+          <h3 class="font-stencil text-2xl uppercase mb-2 text-white">{{ product.title }}</h3>
+          
+          <!-- Price -->
+          <p class="font-mono text-accent text-3xl mb-4">
+            {{ product.price | money }}
+            {% if product.title contains 'PREMIUM' %}+{% endif %}
+          </p>
+
+          <!-- Short Description / First Line -->
+          <div class="font-mono text-concrete text-sm mb-6 h-12 overflow-hidden">
+            {{ product.description | strip_html | truncatewords: 20 }}
+          </div>
+          
+          <!-- Action -->
+          <span class="btn btn-secondary w-full text-center mt-4">
+            VIEW PROTOCOL
+          </span>
+
+          <!-- Corner accents -->
+          <div class="absolute top-0 left-0 w-2 h-2 bg-accent"></div>
+          <div class="absolute top-0 right-0 w-2 h-2 bg-accent"></div>
+          <div class="absolute bottom-0 left-0 w-2 h-2 bg-accent"></div>
+          <div class="absolute bottom-0 right-0 w-2 h-2 bg-accent"></div>
+        </a>
+      {% else %}
+        {% comment %} Placeholder for Theme Editor when a product block is empty {% endcomment %}
+        <div class="package-card p-6 border-dashed border-2 border-concrete bg-swear-gray/20 h-full flex flex-col justify-center items-center text-center">
+          <p class="font-mono text-sm text-concrete">
+            [PACKAGE SLOT {{ forloop.index }}] Select a Service Product in the Theme Editor.
+          </p>
+        </div>
+      {% endif %}
+      
+    {% endfor %}
+
+  </div>
+
+  {% if section.settings.cta_link != blank and section.settings.cta_text != blank %}
+    <div class="text-center mt-12">
+      <a href="{{ section.settings.cta_link }}" class="btn glitch-button px-8 py-3">
+        {{ section.settings.cta_text }}
+      </a>
+    </div>
+  {% endif %}
+
+</div>
+
+{% schema %}
+{
+  "name": "Service Promo Packages",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Heading",
+      "default": "Initiate New Operation"
+    },
+    {
+      "type": "text",
+      "id": "subtitle",
+      "label": "Subtitle",
+      "default": "Select your visual mission."
+    },
+    {
+      "type": "url",
+      "id": "cta_link",
+      "label": "Bottom CTA Link",
+      "default": "/pages/contact"
+    },
+    {
+      "type": "text",
+      "id": "cta_text",
+      "label": "Bottom CTA Text",
+      "default": "REQUEST CUSTOM BRIEFING"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "package_slot",
+      "name": "Package Slot",
+      "settings": [
+        {
+          "type": "product_picker",
+          "id": "product",
+          "label": "Select Service Product",
+          "info": "Choose one of your service package products (Starter, Standard, Premium)."
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Homepage Service Grid",
+      "category": "Services",
+      "blocks": [
+        { "type": "package_slot" },
+        { "type": "package_slot" },
+        { "type": "package_slot" }
+      ]
+    }
+  ],
+  "max_blocks": 3
+}
+{% endschema %}
