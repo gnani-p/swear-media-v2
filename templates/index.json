@@ -26,6 +26,14 @@
         "link_4_url": "https://swearmedia.com/pages/about"
       }
     },
+    "instagram_embed_YgdXMj": {
+      "type": "instagram-embed",
+      "name": "Instagram Post Embed",
+      "settings": {
+        "title": "Latest from Swear Media",
+        "embed_code": ""
+      }
+    },
     "grid": {
       "type": "featured-grid",
       "blocks": {
@@ -57,20 +65,12 @@
         "body_text": "\"IF YOU NOT LIVING LIFE ON THE EDGE <br> THEN YOU TAKING UP SPACE\"",
         "link": "https://youtu.be/9YFA9Q5Oxaw?si=OgKcIS8DWGf0f86E"
       }
-    },
-    "instagram_embed_YgdXMj": {
-      "type": "instagram-embed",
-      "name": "Instagram Post Embed",
-      "settings": {
-        "title": "Latest from Swear Media",
-        "embed_code": ""
-      }
     }
   },
   "order": [
     "hero",
+    "instagram_embed_YgdXMj",
     "grid",
-    "trend",
-    "instagram_embed_YgdXMj"
+    "trend"
   ]
 }
