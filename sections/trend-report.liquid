@@ -1,0 +1,37 @@
+<section class="trend-section" style="background: #1a1a1a; padding: 4rem 0; border-top: 1px solid var(--swear-gray); border-bottom: 1px solid var(--swear-gray);">
+  <div class="container">
+    <h2 class="font-stencil uppercase" style="font-size: 3rem; margin-bottom: 2rem;">{{ section.settings.title }}</h2>
+    
+    <div class="report-box bg-black border border-accent" style="background: #000; border: 1px solid var(--swear-white); padding: 2rem;">
+      <p class="font-mono text-accent text-sm mb-4" style="font-size: 0.875rem; color: var(--swear-white); margin-bottom: 1rem;">
+        ANALYSIS DATE: {{ "now" | date: "%Y.%m.%d" }} // SOURCE: {{ section.settings.source }}
+      </p>
+      
+      <h3 class="font-stencil uppercase" style="font-size: 2rem; margin-bottom: 1rem;">
+        {{ section.settings.headline }}
+      </h3>
+      
+      <p class="font-mono text-concrete text-lg" style="color: var(--swear-concrete); font-size: 1.125rem; max-width: 800px; line-height: 1.6;">
+        {{ section.settings.body_text }}
+      </p>
+
+      <a href="{{ section.settings.link }}" class="font-mono uppercase text-white hover:text-accent" style="display: inline-block; margin-top: 1.5rem; font-size: 1.125rem;">
+        Read Full Report →
+      </a>
+    </div>
+  </div>
+</section>
+
+{% schema %}
+{
+  "name": "Trend Report",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Section Title", "default": "Weekly // Trend Report" },
+    { "type": "text", "id": "source", "label": "Data Source", "default": "Exploding Topics API" },
+    { "type": "text", "id": "headline", "label": "Headline", "default": "The Collapse of the Metaverse Aesthetic" },
+    { "type": "textarea", "id": "body_text", "label": "Body Text", "default": "Our algorithm detected a 300% spike in search interest..." },
+    { "type": "url", "id": "link", "label": "Report Link" }
+  ],
+  "presets": [{ "name": "Trend Report" }]
+}
+{% endschema %}

@@ -1,0 +1,109 @@
+/* --- SWEAR MEDIA: MONOCHROME PALETTE --- */
+:root {
+  --swear-black: #111111;
+  --swear-white: #F0F0F0;
+  --swear-gray: #4D4D4D;
+  --swear-concrete: #9A9A9A;
+  
+  /* REPLACED ORANGE WITH WHITE FOR MONOCHROME HIGHLIGHTS */
+  --swear-accent: #F0F0F0; 
+  
+  --font-stencil: 'Oswald', sans-serif;
+  --font-mono: 'Space Mono', monospace;
+}
+
+/* --- RESET & BASE --- */
+* { box-sizing: border-box; }
+body {
+  margin: 0;
+  background-color: var(--swear-black);
+  color: var(--swear-white);
+  font-family: var(--font-mono);
+  overflow-x: hidden;
+}
+a { text-decoration: none; color: inherit; transition: 0.3s; }
+img, video { max-width: 100%; height: auto; display: block; }
+h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin: 0; }
+
+/* --- UTILITIES --- */
+.container { max-width: 1280px; margin: 0 auto; padding: 0 20px; }
+.text-center { text-align: center; }
+.text-accent { color: var(--swear-accent); }
+.uppercase { text-transform: uppercase; }
+.font-stencil { font-family: var(--font-stencil); font-weight: 700; }
+.font-mono { font-family: var(--font-mono); }
+.flex { display: flex; }
+.items-center { align-items: center; }
+.justify-between { justify-content: space-between; }
+.justify-center { justify-content: center; }
+.relative { position: relative; }
+.absolute { position: absolute; }
+.w-full { width: 100%; }
+.h-full { height: 100%; }
+.object-cover { object-fit: cover; }
+
+/* --- ANIMATIONS --- */
+/* Film Grain */
+.film-grain {
+  position: fixed; inset: 0; pointer-events: none; z-index: 9999;
+  background-image: url('https://cdn.shopify.com/s/files/1/0000/0000/files/noise.png'); 
+  opacity: 0.05;
+}
+
+/* Marquee */
+.marquee-track {
+  display: flex;
+  overflow: hidden;
+  background: var(--swear-white); /* White background for contrast */
+  color: var(--swear-black);      /* Black text */
+  height: 40px;
+  align-items: center;
+}
+.marquee-content {
+  display: flex;
+  white-space: nowrap;
+  animation: marquee 30s linear infinite;
+}
+@keyframes marquee {
+  0% { transform: translateX(0); }
+  100% { transform: translateX(-100%); }
+}
+
+/* Glitch/Hover Effect (Monochrome) */
+.glitch-card:hover .card-image {
+  filter: grayscale(0%) contrast(120%);
+  transform: scale(1.02);
+}
+.glitch-card .card-image {
+  filter: grayscale(100%) contrast(100%);
+  transition: transform 0.3s, filter 0.3s;
+}
+
+/* --- BUTTONS --- */
+.btn {
+  display: inline-block;
+  padding: 12px 24px;
+  border: 1px solid var(--swear-white);
+  font-family: var(--font-mono);
+  text-transform: uppercase;
+  font-weight: 700;
+  font-size: 14px;
+  cursor: pointer;
+  background: transparent;
+  color: var(--swear-white);
+}
+.btn:hover { 
+  background: var(--swear-white); 
+  color: var(--swear-black); 
+  border-color: var(--swear-white); 
+}
+.btn-primary { 
+  background: var(--swear-white); 
+  color: var(--swear-black); 
+  border-color: var(--swear-white); 
+}
+.btn-primary:hover { 
+  background: transparent; 
+  color: var(--swear-white); 
+  border-color: var(--swear-white); 
+}

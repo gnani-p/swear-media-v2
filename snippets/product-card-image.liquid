@@ -1,0 +1,10 @@
+{% comment %} Displays the product image with the grayscale effect {% endcomment %}
+{% if product.featured_image %}
+    <img 
+        src="{{ product.featured_image | img_url: '800x' }}" 
+        alt="{{ product.featured_image.alt | escape }}" 
+        class="card-image w-full h-auto object-cover"
+    />
+{% else %}
+    <div class="card-image" style="width: 100%; height: 250px; background: #222;"></div>
+{% endif %}

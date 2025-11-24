@@ -1,0 +1,65 @@
+<section class="container" style="padding: 4rem 20px;">
+  <h2 class="font-stencil uppercase" style="font-size: 3rem; border-bottom: 2px solid var(--swear-white); padding-bottom: 1rem; margin-bottom: 3rem;">
+    {{ section.settings.title }}
+  </h2>
+
+  <div class="grid-container">
+    {% for block in section.blocks %}
+      <a href="{{ block.settings.link }}" class="glitch-card block bg-black border border-gray group relative" style="border: 1px solid var(--swear-gray);">
+        <div class="card-image-wrapper relative overflow-hidden">
+          {% if block.settings.image != blank %}
+            <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" class="card-image w-full">
+          {% else %}
+            <div class="card-image" style="width: 100%; height: 250px; background: #222;"></div>
+          {% endif %}
+        </div>
+        
+        <div class="card-content" style="padding: 1rem; border-top: 1px solid var(--swear-gray);">
+          <h3 class="font-stencil text-xl group-hover:text-accent" style="font-size: 1.25rem; color: var(--swear-white);">{{ block.settings.title }}</h3>
+          <div class="tags flex gap-2 mt-2" style="margin-top: 0.5rem; display: flex; gap: 0.5rem;">
+            <span class="tag border border-concrete text-concrete" style="border: 1px solid var(--swear-concrete); color: var(--swear-concrete); padding: 2px 6px; font-size: 0.75rem; font-family: var(--font-mono);">#{{ block.settings.tag1 }}</span>
+            <span class="tag border border-concrete text-concrete" style="border: 1px solid var(--swear-concrete); color: var(--swear-concrete); padding: 2px 6px; font-size: 0.75rem; font-family: var(--font-mono);">#{{ block.settings.tag2 }}</span>
+          </div>
+        </div>
+      </a>
+    {% endfor %}
+  </div>
+
+  <div class="text-center" style="margin-top: 3rem;">
+    <a href="{{ section.settings.view_all_link }}" class="font-mono uppercase text-accent hover:text-white" style="font-size: 1.25rem;">
+      View All Documents →
+    </a>
+  </div>
+</section>
+
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Featured Grid",
+  "settings": [
+    { "type": "text", "id": "title", "label": "Section Title", "default": "Most Recent // Documents" },
+    { "type": "url", "id": "view_all_link", "label": "View All Link" }
+  ],
+  "blocks": [
+    {
+      "type": "card",
+      "name": "Document Card",
+      "settings": [
+        { "type": "image_picker", "id": "image", "label": "Image" },
+        { "type": "text", "id": "title", "label": "Title", "default": "Project Title" },
+        { "type": "text", "id": "tag1", "label": "Tag 1", "default": "MiniDoc" },
+        { "type": "text", "id": "tag2", "label": "Tag 2", "default": "Streets" },
+        { "type": "url", "id": "link", "label": "Link" }
+      ]
+    }
+  ],
+  "presets": [{ "name": "Featured Grid" }]
+}
+{% endschema %}

@@ -1,0 +1,37 @@
+<header class="site-header">
+  <div class="container flex justify-between items-center" style="height: 64px;">
+    <!-- Logo -->
+    <a href="/" class="logo font-stencil">
+      SWEAR<span class="text-accent">MEDIA.COM</span>
+    </a>
+
+    <!-- Desktop Nav -->
+    <nav class="desktop-nav">
+      <!-- You can manage these links in Shopify Admin > Navigation > Main Menu -->
+      <a href="/collections/films" class="nav-link font-mono uppercase">Films</a>
+      <a href="/collections/streets" class="nav-link font-mono uppercase">Streets</a>
+      <a href="/collections/drops" class="nav-link font-mono uppercase">Drops</a>
+    </nav>
+    
+    <!-- Mobile Toggle -->
+    <div class="mobile-toggle text-accent" style="font-size: 24px;">☰</div>
+  </div>
+</header>
+
+<style>
+  .site-header {
+    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+    background: var(--swear-black);
+    border-bottom: 1px solid rgba(77, 77, 77, 0.5);
+  }
+  .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
+  .desktop-nav { display: flex; gap: 24px; font-size: 14px; }
+  .nav-link:hover { color: var(--swear-white); text-decoration: underline; text-decoration-thickness: 2px; }
+  @media(max-width: 768px) {
+    .desktop-nav { display: none; }
+  }
+</style>
+
+{% schema %}
+{ "name": "Header", "settings": [] }
+{% endschema %}
