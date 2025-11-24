@@ -1,0 +1,75 @@
+{% comment %}
+  Template: Film Player (Product)
+  Role: The actual page to watch the video.
+{% endcomment %}
+
+<div class="film-theater bg-swear-black min-h-screen">
+  
+  <!-- 1. The Cinema Player -->
+  <div class="player-stage w-full relative" style="border-bottom: 1px solid var(--swear-gray);">
+    <div class="container" style="max-width: 1600px; padding: 0;">
+      {% assign has_video = false %}
+      
+      {% for media in product.media %}
+        {% if media.media_type == 'video' %}
+          {% assign has_video = true %}
+          <!-- Shopify Native Video Player -->
+          <div class="video-wrapper" style="width: 100%; aspect-ratio: 16/9;">
+            {{ media | video_tag: controls: true, autoplay: true, loop: false, class: 'w-full h-full object-cover' }}
+          </div>
+          {% break %} {% comment %} Only show the first video found {% endcomment %}
+        {% endif %}
+      {% endfor %}
+
+      {% unless has_video %}
+        <!-- Fallback if no video uploaded -->
+        <div class="w-full aspect-video bg-swear-gray flex items-center justify-center">
+          <p class="font-mono text-accent">ERROR: VIDEO SOURCE MISSING</p>
+        </div>
+      {% endunless %}
+    </div>
+  </div>
+
+  <!-- 2. The Meta Data & Synopsis -->
+  <div class="container" style="padding: 4rem 20px;">
+    <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+      
+      <!-- Left: Title & Info -->
+      <div class="lg:col-span-2">
+        <div class="flex items-center gap-4 mb-4">
+          <span class="font-mono text-xs border border-accent text-accent px-2 py-1">NOW PLAYING</span>
+          <span class="font-mono text-xs text-concrete">{{ product.created_at | date: "%B %d, %Y" }}</span>
+        </div>
+        
+        <h1 class="font-stencil uppercase text-white" style="font-size: 3.5rem; line-height: 1;">{{ product.title }}</h1>
+        
+        <div class="synopsis mt-8 font-mono text-concrete text-lg leading-relaxed">
+          {{ product.description }}
+        </div>
+      </div>
+
+      <!-- Right: Credits / Details -->
+      <div class="lg:col-span-1 border-l border-swear-gray pl-8 hidden lg:block">
+        <h3 class="font-stencil uppercase text-xl mb-6">File Metadata</h3>
+        <ul class="font-mono text-sm space-y-4 text-concrete">
+          <li class="flex justify-between border-b border-swear-gray pb-2">
+            <span>TYPE</span> <span class="text-white">Video / MP4</span>
+          </li>
+          <li class="flex justify-between border-b border-swear-gray pb-2">
+            <span>DURATION</span> <span class="text-white">--:--</span>
+          </li>
+          <li class="flex justify-between border-b border-swear-gray pb-2">
+            <span>TAGS</span> <span class="text-white">{{ product.tags | join: ', ' }}</span>
+          </li>
+        </ul>
+
+        <!-- Share / Action -->
+        <button class="btn w-full mt-8" onclick="navigator.clipboard.writeText(window.location.href); alert('LINK COPIED');">
+          COPY LINK TO CLIPBOARD
+        </button>
+      </div>
+
+    </div>
+  </div>
+
+</div>
