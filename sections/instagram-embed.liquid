@@ -1,0 +1,77 @@
+{% comment %}
+  Shopify Section: Instagram Embed Block
+  Role: Allows users to paste the full Instagram embed code via the Theme Editor.
+{% endcomment %}
+
+<div class="section-instagram-embed container py-8 md:py-12" data-section-id="{{ section.id }}">
+  <div class="max-w-xl mx-auto">
+    {% if section.settings.title != blank %}
+      <h2 class="font-stencil uppercase text-2xl mb-6 text-center text-white">{{ section.settings.title }}</h2>
+    {% endif %}
+
+    {% if section.settings.embed_code != blank %}
+      <!-- The container for the embedded content -->
+      <div class="instagram-post-container p-4 border border-swear-gray bg-swear-black shadow-lg">
+        {{ section.settings.embed_code }}
+      </div>
+      
+      <p class="font-mono text-concrete text-xs text-center mt-4">
+        // POST DATA LOADED VIA INSTAGRAM API
+      </p>
+
+    {% else %}
+      <div class="bg-swear-gray p-8 text-center border-dashed border-2 border-concrete">
+        <p class="font-mono text-sm text-concrete">
+          [Instagram Embed Block] Please edit this section in the Theme Customizer and paste the full embed code.
+        </p>
+      </div>
+    {% endif %}
+  </div>
+</div>
+
+<style>
+  /*
+    Custom styles to ensure the Instagram embed looks and behaves well.
+    Instagram embeds include their own JS, so we primarily focus on containment.
+  */
+  .instagram-post-container {
+    /* Ensures the post widget doesn't break out of the container */
+    overflow: hidden; 
+    border-radius: 4px;
+    /* Custom styling for the embed background */
+  }
+
+  /* Target the Instagram element specifically for better centering and responsiveness */
+  .instagram-post-container > div {
+    margin: 0 auto !important; /* Force center the widget */
+    max-width: 100%; /* Ensure it's responsive */
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Instagram Post Embed",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Heading",
+      "default": "Latest from Swear Media",
+      "info": "Optional heading above the post."
+    },
+    {
+      "type": "html",
+      "id": "embed_code",
+      "label": "Instagram Embed Code",
+      "info": "Paste the full embed code (HTML and script tags) from Instagram here. Find it by clicking the '...' on an Instagram post and selecting 'Embed'."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Instagram Post Embed",
+      "category": "Social"
+    }
+  ]
+}
+{% endschema %}
