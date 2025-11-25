@@ -48,21 +48,6 @@
     },
     "grid": {
       "type": "featured-grid",
-      "blocks": {
-        "card_M3XQ3V": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/DSC05018.jpg",
-            "title": "Cart of Nowhere",
-            "tag1": "MiniDoc",
-            "tag2": "Streets",
-            "link": "https://cdn.shopify.com/s/files/1/0597/6509/6512/files/DSC05018.jpg?v=1763867523"
-          }
-        }
-      },
-      "block_order": [
-        "card_M3XQ3V"
-      ],
       "settings": {
         "title": "Most Recent // Documents",
         "view_all_link": ""
