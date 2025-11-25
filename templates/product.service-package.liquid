@@ -1,0 +1,107 @@
+{% comment %}
+  Custom template for service packages (Starter, Standard, Premium).
+  Focuses on displaying service details and contact information over standard e-commerce features.
+{% endcomment %}
+
+{% assign current_variant = product.selected_or_first_available_variant %}
+
+<div class="service-product-page container" style="padding-top: 6rem; padding-bottom: 6rem;">
+  
+  <div class="grid grid-cols-1 lg:grid-cols-3 gap-12">
+
+    <!-- Left Column: Main Package Details -->
+    <div class="lg:col-span-2">
+      <header class="mb-8 pb-4 border-b border-swear-white">
+        <!-- Package Name -->
+        <p class="font-mono text-xs text-accent uppercase mb-2">Operation Protocol</p>
+        <h1 class="font-stencil uppercase" style="font-size: 3rem;">{{ product.title }}</h1>
+        <p class="font-mono text-concrete mt-2">{{ product.metafields.custom.subtitle }}</p>
+      </header>
+
+      <!-- Pricing & Buy Box -->
+      <div class="buy-box p-6 border border-swear-white bg-swear-black/50 mb-12">
+        <div class="flex items-center justify-between mb-4">
+          <p class="font-stencil text-2xl uppercase">Rate:</p>
+          <p class="font-stencil text-accent" style="font-size: 3rem;">
+            {{ current_variant.price | money }}
+            {% if product.title contains 'PREMIUM' %}+{% endif %}
+          </p>
+        </div>
+
+        <p class="font-mono text-concrete text-sm mb-4">
+          {{ product.description }}
+        </p>
+        
+        <!-- Booking Form -->
+        {% form 'product', product %}
+          <input type="hidden" name="id" value="{{ current_variant.id }}">
+          
+          {% if product.has_only_default_variant %}
+             <!-- Only show the variant picker if multiple variants exist (e.g., full price vs deposit) -->
+          {% endif %}
+
+          <button type="submit" name="add" class="btn btn-primary w-full glitch-button mt-4">
+            INITIATE // SECURE DEPOSIT
+          </button>
+        {% endform %}
+
+        <p class="font-mono text-xs text-center text-concrete mt-4">
+          A 30–50% deposit is required to secure your booking. Final balance due at delivery.
+        </p>
+
+      </div>
+
+      <!-- Static Add-ons -->
+      <div class="static-addons">
+        <h2 class="font-stencil uppercase text-2xl mb-4 border-b border-swear-gray pb-2">ADD-ONS (OPTIONAL)</h2>
+        <p class="font-mono text-concrete mb-4">Add these to any package for more flexibility.</p>
+        
+        <ul class="font-mono text-sm space-y-2">
+          <li class="flex justify-between border-b border-swear-gray/50 pb-1"><span>• Extra 15 seconds of video</span> <span class="text-accent">+ $50</span></li>
+          <li class="flex justify-between border-b border-swear-gray/50 pb-1"><span>• Additional location</span> <span class="text-accent">+ $40</span></li>
+          <li class="flex justify-between border-b border-swear-gray/50 pb-1"><span>• Rush delivery (48 hours)</span> <span class="text-accent">+ $75</span></li>
+          <li class="flex justify-between border-b border-swear-gray/50 pb-1"><span>• Additional revision</span> <span class="text-accent">+ $40</span></li>
+          <li class="flex justify-between border-b border-swear-gray/50 pb-1"><span>• TikTok/Instagram vertical cut</span> <span class="text-accent">+ $30</span></li>
+          <li class="flex justify-between border-b border-swear-gray/50 pb-1"><span>• Raw footage provided</span> <span class="text-accent">+ $25</span></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Right Column: Terms, Loyalty, Contact -->
+    <div class="lg:col-span-1 space-y-10">
+
+      <!-- Terms & Requirements -->
+      <div class="p-6 border border-swear-gray bg-swear-black shadow-inner">
+        <h3 class="font-stencil uppercase text-xl mb-4">TERMS & REQUIREMENTS</h3>
+        <div class="font-mono text-sm space-y-4 text-concrete">
+          <p><strong>Deposit:</strong> A 30–50% deposit is required to secure your booking. Remaining balance due at delivery.</p>
+          <p><strong>Revisions:</strong> Starter & Standard include 1 revision at standard rate. Premium includes 1 revision at no cost. Additional revisions are charged at $40 each.</p>
+          <p><strong>Travel:</strong> Projects outside the Columbus area may include a small travel fee.</p>
+          <p><strong>Payment:</strong> Cash, card, PayPal, or invoice available upon request.</p>
+        </div>
+      </div>
+
+      <!-- Loyalty Program -->
+      <div class="p-6 border border-swear-gray bg-swear-black shadow-inner">
+        <h3 class="font-stencil uppercase text-xl mb-4 text-accent">LOCAL BUSINESS LOYALTY PROGRAM</h3>
+        <p class="font-mono text-sm text-concrete">
+          After your first project with SWEAR Media, all future projects receive a 15% loyalty discount. We grow when our local partners grow — this program keeps long-term collaboration simple.
+        </p>
+      </div>
+      
+      <!-- Contact Block -->
+      <div class="p-6 border border-swear-gray bg-swear-black shadow-inner">
+        <h3 class="font-stencil uppercase text-xl mb-4">BOOKING & CONTACT</h3>
+        <ul class="font-mono text-sm space-y-2 text-concrete">
+          <li>Columbus, Ohio</li>
+          <li>Email: <a href="mailto:swear.digital@gmail.com" class="text-white hover:text-accent">swear.digital@gmail.com</a></li>
+          <li>Phone: <a href="tel:7409197422" class="text-white hover:text-accent">740 919 7422</a></li>
+          <li>Instagram: <a href="https://instagram.com/swearmedia" target="_blank" class="text-white hover:text-accent">@swearmedia</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+  </div>
+</div>

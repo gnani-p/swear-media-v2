@@ -1,7 +1,13 @@
 {% comment %}
+<<<<<<< HEAD
   Shopify Section: Instagram Grid Embed (Revised for Smaller, Auto-Assorting Grid)
   Role: Displays multiple Instagram posts in a compact, responsive grid.
   Aggressive CSS ensures embeds scale down more effectively.
+=======
+  Shopify Section: Instagram Grid Embed
+  Role: Uses blocks to allow multiple Instagram post embed codes in a responsive grid.
+  The grid will dynamically adjust based on the number of posts added.
+>>>>>>> refs/remotes/origin/main
 {% endcomment %}
 
 <div class="section-instagram-grid container mx-auto py-8 md:py-12 px-4" data-section-id="{{ section.id }}">
@@ -10,15 +16,23 @@
   {% endif %}
 
   {% if section.blocks.size > 0 %}
+<<<<<<< HEAD
     <div class="instagram-grid grid gap-4 
       grid-cols-1 
       sm:grid-cols-2 
       lg:grid-cols-4 
       xl:grid-cols-5"> {# Increased columns for desktop to make them smaller #}
+=======
+    <div class="instagram-grid grid gap-8 
+      grid-cols-1 
+      sm:grid-cols-2 
+      lg:grid-cols-3">
+>>>>>>> refs/remotes/origin/main
 
       {% for block in section.blocks %}
         <div class="instagram-post-item" {{ block.shopify_attributes }}>
           {% if block.settings.block_title != blank %}
+<<<<<<< HEAD
             <h3 class="font-mono text-xs text-concrete mb-2 text-center">{{ block.settings.block_title }}</h3>
           {% endif %}
           
@@ -33,6 +47,20 @@
             <div class="bg-swear-gray p-4 text-center border-dashed border-2 border-concrete h-full flex flex-col items-center justify-center">
               <p class="font-mono text-xs text-concrete">
                 [Grid Item {{ forloop.index }}] Add Instagram embed code.
+=======
+            <h3 class="font-mono text-sm text-concrete mb-3">{{ block.settings.block_title }}</h3>
+          {% endif %}
+          
+          {% if block.settings.embed_code != blank %}
+            <!-- The post content container -->
+            <div class="instagram-post-container p-4 border border-swear-gray bg-swear-black shadow-lg h-full">
+              {{ block.settings.embed_code }}
+            </div>
+          {% else %}
+            <div class="bg-swear-gray p-8 text-center border-dashed border-2 border-concrete h-full flex items-center justify-center">
+              <p class="font-mono text-xs text-concrete">
+                [Grid Item {{ forloop.index }}] Add the Instagram embed code in the theme editor block settings.
+>>>>>>> refs/remotes/origin/main
               </p>
             </div>
           {% endif %}
@@ -52,6 +80,7 @@
 </div>
 
 <style>
+<<<<<<< HEAD
   /*
     Critical CSS for making Instagram embeds smaller and fit a grid.
     Instagram embeds often have min-widths baked in, so we have to be aggressive.
@@ -88,12 +117,32 @@
   /* Make sure the script tag's container doesn't create extra space */
   .instagram-post-item .instagram-post-container + script {
       display: none;
+=======
+  /* Crucial CSS: The Instagram script dynamically injects an iframe. 
+    This ensures the iframe width adheres to the grid column width, 
+    making the post responsive and fitting into the grid.
+  */
+  .instagram-post-container > div {
+    /* Ensures the main Instagram blockquote wrapper takes 100% of the column space */
+    width: 100% !important; 
+    margin: 0 !important;
+  }
+  .instagram-post-container iframe {
+    /* This style is key for responsiveness, overriding Instagram's fixed width */
+    max-width: 100% !important; 
+    width: 100% !important;
+    min-width: 0 !important;
+>>>>>>> refs/remotes/origin/main
   }
 </style>
 
 {% schema %}
 {
+<<<<<<< HEAD
   "name": "Instagram Grid Embed (Small)",
+=======
+  "name": "Instagram Grid Embed",
+>>>>>>> refs/remotes/origin/main
   "tag": "section",
   "settings": [
     {
@@ -126,6 +175,7 @@
   ],
   "presets": [
     {
+<<<<<<< HEAD
       "name": "Instagram Grid (Small Posts)",
       "category": "Social",
       "blocks": [
@@ -136,5 +186,13 @@
     }
   ],
   "max_blocks": 10
+=======
+      "name": "Instagram Grid (Multiple Posts)",
+      "category": "Social"
+    }
+  ],
+  "max_blocks": 6
+>>>>>>> refs/remotes/origin/main
 }
 {% endschema %}
+
