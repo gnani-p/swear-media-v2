@@ -1,0 +1,14 @@
+<a href="{{ product.url }}" class="glitch-card block bg-black border border-gray group relative" style="border: 1px solid var(--swear-gray);">
+  <div class="card-image-wrapper relative overflow-hidden">
+    {% if product.featured_image %}
+      <img src="{{ product.featured_image | img_url: '800x' }}" alt="{{ product.title }}" class="card-image w-full">
+    {% else %}
+      <div class="card-image" style="width: 100%; height: 250px; background: #222;"></div>
+    {% endif %}
+  </div>
+  
+  <div class="card-content" style="padding: 1rem; border-top: 1px solid var(--swear-gray);">
+    <h3 class="font-stencil text-xl group-hover:text-accent" style="font-size: 1.25rem; color: var(--swear-white);">{{ product.title }}</h3>
+    <p class="font-mono" style="color: var(--swear-white); margin-top: 0.5rem;">{{ product.price | money }}</p>
+  </div>
+</a>
