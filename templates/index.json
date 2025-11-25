@@ -28,10 +28,53 @@
     },
     "instagram_embed_YgdXMj": {
       "type": "instagram-embed",
+      "blocks": {
+        "instagram_post_e3zRXW": {
+          "type": "instagram_post",
+          "settings": {
+            "block_title": "",
+            "embed_code": ""
+          }
+        },
+        "instagram_post_ckzzm9": {
+          "type": "instagram_post",
+          "settings": {
+            "block_title": "",
+            "embed_code": ""
+          }
+        },
+        "instagram_post_kdjeRb": {
+          "type": "instagram_post",
+          "settings": {
+            "block_title": "",
+            "embed_code": ""
+          }
+        },
+        "instagram_post_nRXHtK": {
+          "type": "instagram_post",
+          "settings": {
+            "block_title": "",
+            "embed_code": ""
+          }
+        },
+        "instagram_post_NbPHR8": {
+          "type": "instagram_post",
+          "settings": {
+            "block_title": "",
+            "embed_code": ""
+          }
+        }
+      },
+      "block_order": [
+        "instagram_post_e3zRXW",
+        "instagram_post_ckzzm9",
+        "instagram_post_kdjeRb",
+        "instagram_post_nRXHtK",
+        "instagram_post_NbPHR8"
+      ],
       "name": "Instagram Post Embed",
       "settings": {
-        "title": "Latest from Swear Media",
-        "embed_code": ""
+        "title": "Latest from Swear Media"
       }
     },
     "grid": {
@@ -65,47 +108,12 @@
         "body_text": "\"IF YOU NOT LIVING LIFE ON THE EDGE <br> THEN YOU TAKING UP SPACE\"",
         "link": "https://youtu.be/9YFA9Q5Oxaw?si=OgKcIS8DWGf0f86E"
       }
-    },
-    "service-promo": {
-      "type": "service-promo",
-      "blocks": {
-        "starter": {
-          "type": "package_slot",
-          "settings": {
-            "product": "starter-package"
-          }
-        },
-        "standard": {
-          "type": "package_slot",
-          "settings": {
-            "product": "standard-package"
-          }
-        },
-        "premium": {
-          "type": "package_slot",
-          "settings": {
-            "product": "premium-package"
-          }
-        }
-      },
-      "block_order": [
-        "starter",
-        "standard",
-        "premium"
-      ],
-      "settings": {
-        "title": "INITIATE NEW OPERATION",
-        "subtitle": "Select your visual mission.",
-        "cta_text": "REQUEST CUSTOM BRIEFING",
-        "cta_link": "/pages/contact"
-      }
     }
   },
   "order": [
     "hero",
     "instagram_embed_YgdXMj",
     "grid",
-    "trend",
-    "service-promo"
+    "trend"
   ]
 }
