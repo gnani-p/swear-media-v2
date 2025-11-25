@@ -1,7 +1,6 @@
 {% comment %}
-  Shopify Section: Instagram Grid Embed (Revised for Smaller, Auto-Assorting Grid)
+  Shopify Section: Instagram Grid
   Role: Displays multiple Instagram posts in a compact, responsive grid.
-  Aggressive CSS ensures embeds scale down more effectively.
 {% endcomment %}
 
 <div class="section-instagram-grid container mx-auto py-8 md:py-12 px-4" data-section-id="{{ section.id }}">
@@ -10,34 +9,21 @@
   {% endif %}
 
   {% if section.blocks.size > 0 %}
-    <div class="instagram-grid grid gap-4 
-      grid-cols-1 
-      sm:grid-cols-2 
-      lg:grid-cols-4 
-      xl:grid-cols-5"> {# Increased columns for desktop to make them smaller #}
+    <div class="instagram-grid grid gap-4 grid-cols-2 sm:grid-cols-4">
 
       {% for block in section.blocks %}
         <div class="instagram-post-item" {{ block.shopify_attributes }}>
-          {% if block.settings.block_title != blank %}
-            <h3 class="font-mono text-xs text-concrete mb-2 text-center">{{ block.settings.block_title }}</h3>
-          {% endif %}
-          
-          {% if block.settings.embed_code != blank %}
-            
-
-<div class="instagram-post-container relative w-full overflow-hidden border border-swear-gray bg-swear-black shadow-lg" 
-                 style="padding-top: 100%; /* Creates a 1:1 aspect ratio container for the square Instagram post */">
-              <div class="absolute inset-0 flex items-center justify-center">
-                {{ block.settings.embed_code }}
+          <a href="{{ block.settings.post_url }}" target="_blank" rel="noopener noreferrer">
+            {% if block.settings.image != blank %}
+              <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.block_title | escape }}" class="w-full h-full object-cover">
+            {% else %}
+              <div class="bg-swear-gray p-4 text-center border-dashed border-2 border-concrete h-full flex flex-col items-center justify-center">
+                <p class="font-mono text-xs text-concrete">
+                  [Grid Item {{ forloop.index }}] Add an image.
+                </p>
               </div>
-            </div>
-          {% else %}
-            <div class="bg-swear-gray p-4 text-center border-dashed border-2 border-concrete h-full flex flex-col items-center justify-center">
-              <p class="font-mono text-xs text-concrete">
-                [Grid Item {{ forloop.index }}] Add Instagram embed code.
-              </p>
-            </div>
-          {% endif %}
+            {% endif %}
+          </a>
         </div>
       {% endfor %}
     </div>
@@ -52,46 +38,6 @@
     </div>
   {% endif %}
 </div>
-
-<style>
-  /*
-    Critical CSS for making Instagram embeds smaller and fit a grid.
-    Instagram embeds often have min-widths baked in, so we have to be aggressive.
-  */
-  .instagram-post-container {
-    /* We use padding-top for aspect ratio, so height: 0 is important */
-    height: 0; 
-  }
-
-  .instagram-post-container > div {
-    /* This targets the main blockquote wrapper Instagram injects */
-    width: 100% !important; 
-    height: 100% !important; /* Take full height of its parent */
-    margin: 0 !important;
-    display: flex; /* Use flex to center iframe inside */
-    align-items: center;
-    justify-content: center;
-  }
-
-  .instagram-post-container iframe {
-    /* This is the key override for the iframe itself */
-    max-width: 100% !important; 
-    max-height: 100% !important;
-    width: 100% !important; 
-    height: 100% !important;
-    min-width: 0 !important; /* Crucial to allow shrinking */
-    min-height: 0 !important; /* Crucial to allow shrinking */
-    position: absolute; /* Allows it to fill the absolutely positioned parent div */
-    top: 0;
-    left: 0;
-    border: none; /* Remove any default iframe borders */
-  }
-
-  /* Make sure the script tag's container doesn't create extra space */
-  .instagram-post-item .instagram-post-container + script {
-      display: none;
-  }
-</style>
 
 {% schema %}
 {
@@ -112,16 +58,20 @@
       "name": "Instagram Post",
       "settings": [
         {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Post Image"
+        },
+        {
+          "type": "url",
+          "id": "post_url",
+          "label": "Post URL"
+        },
+        {
           "type": "text",
           "id": "block_title",
           "label": "Post Title (Optional)",
           "info": "e.g., 'New Film Trailer'"
-        },
-        {
-          "type": "html",
-          "id": "embed_code",
-          "label": "Instagram Embed Code (Required)",
-          "info": "Paste the full embed code (HTML and script tags) from Instagram here. You MUST include the full <blockquote...> and <script> tags."
         }
       ]
     }
@@ -133,10 +83,11 @@
       "blocks": [
         { "type": "instagram_post" },
         { "type": "instagram_post" },
+        { "type": "instagram_post" },
         { "type": "instagram_post" }
       ]
     }
   ],
-  "max_blocks": 10
+  "max_blocks": 12
 }
 {% endschema %}
