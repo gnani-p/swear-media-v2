@@ -82,12 +82,12 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
 /* --- BUTTONS --- */
 .btn {
   display: inline-block;
-  padding: 12px 24px;
+  padding: 10px 20px;
   border: 1px solid var(--swear-white);
   font-family: var(--font-mono);
   text-transform: uppercase;
   font-weight: 700;
-  font-size: 14px;
+  font-size: 12px;
   cursor: pointer;
   background: transparent;
   color: var(--swear-white);
