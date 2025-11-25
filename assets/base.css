@@ -62,7 +62,7 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
 .marquee-content {
   display: flex;
   white-space: nowrap;
-  animation: marquee 30s linear infinite;
+  animation: marquee 60s linear infinite;
 }
 @keyframes marquee {
   0% { transform: translateX(0); }
