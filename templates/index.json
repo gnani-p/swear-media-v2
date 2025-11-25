@@ -29,6 +29,14 @@
     "instagram_embed_tzMMwh": {
       "type": "instagram-embed",
       "blocks": {
+        "instagram_post_CtWfjP": {
+          "type": "instagram_post",
+          "settings": {
+            "image": "shopify://shop_images/333141081_1252017808855991_1045291130686542046_n.jpg",
+            "post_url": "",
+            "block_title": ""
+          }
+        },
         "instagram_post_mfJexw": {
           "type": "instagram_post",
           "settings": {
@@ -39,6 +47,7 @@
         }
       },
       "block_order": [
+        "instagram_post_CtWfjP",
         "instagram_post_mfJexw"
       ],
       "name": "Small Instagram Grid",
