@@ -108,12 +108,33 @@
         "body_text": "\"IF YOU NOT LIVING LIFE ON THE EDGE <br> THEN YOU TAKING UP SPACE\"",
         "link": "https://youtu.be/9YFA9Q5Oxaw?si=OgKcIS8DWGf0f86E"
       }
+    },
+    "brands_service_package_Y96Vnt": {
+      "type": "brands-service-package",
+      "name": "Service Package Selection",
+      "settings": {
+        "title": "Service Packages",
+        "products_to_show": 3,
+        "product_1": "starter-package",
+        "product_2": "standard-package",
+        "product_3": "premium-package",
+        "product_4": "",
+        "product_5": "",
+        "product_6": "",
+        "product_7": "",
+        "product_8": "",
+        "product_9": "",
+        "product_10": "",
+        "product_11": "",
+        "product_12": ""
+      }
     }
   },
   "order": [
     "hero",
     "instagram_embed_YgdXMj",
     "grid",
-    "trend"
+    "trend",
+    "brands_service_package_Y96Vnt"
   ]
 }
