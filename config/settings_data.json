@@ -1,0 +1,43 @@
+/*
+ * ------------------------------------------------------------
+ * IMPORTANT: The contents of this file are auto-generated.
+ *
+ * This file may be updated by the Shopify admin theme editor
+ * or related systems. Please exercise caution as any changes
+ * made to this file may be overwritten.
+ * ------------------------------------------------------------
+ */
+{
+  "current": {
+    "sections": {
+      "header": {
+        "type": "header",
+        "settings": {}
+      },
+      "footer": {
+        "type": "footer",
+        "settings": {}
+      },
+      "brands-service-package": {
+        "type": "brands-service-package",
+        "settings": {
+          "title": "Service Packages",
+          "products_to_show": 3,
+          "product_1": "starter-package",
+          "product_2": "standard-package",
+          "product_3": "premium-package",
+          "product_4": "",
+          "product_5": "",
+          "product_6": "",
+          "product_7": "",
+          "product_8": "",
+          "product_9": "",
+          "product_10": "",
+          "product_11": "",
+          "product_12": ""
+        }
+      }
+    },
+    "content_for_index": []
+  }
+}
