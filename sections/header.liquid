@@ -14,9 +14,21 @@
     </nav>
     
     <!-- Mobile Toggle -->
-    <div class="mobile-toggle text-accent" style="font-size: 24px;">☰</div>
+    <div class="mobile-toggle text-accent" style="font-size: 24px; cursor: pointer;">☰</div>
   </div>
 </header>
+
+{% include 'side-menu' %}
+
+<script>
+  document.querySelector('.mobile-toggle').addEventListener('click', function() {
+    document.getElementById('side-menu').style.width = '250px';
+  });
+
+  document.querySelector('.close-btn').addEventListener('click', function() {
+    document.getElementById('side-menu').style.width = '0';
+  });
+</script>
 
 <style>
   .site-header {

@@ -1,0 +1,51 @@
+<div id="side-menu" class="side-menu-container">
+  <div class="side-menu-content">
+    <a href="javascript:void(0)" class="close-btn">&times;</a>
+    <a href="/collections/films" class="nav-link font-mono uppercase">Films</a>
+    <a href="/pages/brands" class="nav-link font-mono uppercase">Brands</a>
+    <a href="/collections/portraits" class="nav-link font-mono uppercase">Portraits</a>
+  </div>
+</div>
+
+<style>
+  .side-menu-container {
+    height: 100%;
+    width: 0;
+    position: fixed;
+    z-index: 101;
+    top: 0;
+    right: 0;
+    background-color: var(--swear-black);
+    overflow-x: hidden;
+    transition: 0.5s;
+    padding-top: 60px;
+  }
+
+  .side-menu-content {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+  }
+
+  .side-menu-content a {
+    padding: 8px;
+    text-decoration: none;
+    font-size: 25px;
+    color: var(--swear-white);
+    display: block;
+    transition: 0.3s;
+  }
+
+  .side-menu-content a:hover {
+    color: var(--swear-accent);
+  }
+
+  .side-menu-content .close-btn {
+    position: absolute;
+    top: -30px;
+    right: 25px;
+    font-size: 36px;
+  }
+</style>
