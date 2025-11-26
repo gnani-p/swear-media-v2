@@ -47,6 +47,20 @@
     },
     "grid": {
       "type": "featured-grid",
+      "blocks": {
+        "card_qYNpD9": {
+          "type": "card",
+          "settings": {
+            "title": "Project Title",
+            "tag1": "MiniDoc",
+            "tag2": "Streets",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "card_qYNpD9"
+      ],
       "settings": {
         "title": "Most Recent // Collaborations",
         "view_all_link": ""
@@ -81,6 +95,26 @@
         "product_11": "",
         "product_12": ""
       }
+    },
+    "brands_service_package_FC3xh7": {
+      "type": "brands-service-package",
+      "name": "Service Package Selection",
+      "settings": {
+        "title": "Service Packages",
+        "products_to_show": 3,
+        "product_1": "",
+        "product_2": "",
+        "product_3": "",
+        "product_4": "",
+        "product_5": "",
+        "product_6": "",
+        "product_7": "",
+        "product_8": "",
+        "product_9": "",
+        "product_10": "",
+        "product_11": "",
+        "product_12": ""
+      }
     }
   },
   "order": [
@@ -88,6 +122,7 @@
     "instagram_embed_tzMMwh",
     "grid",
     "trend",
-    "brands_service_package_Y96Vnt"
+    "brands_service_package_Y96Vnt",
+    "brands_service_package_FC3xh7"
   ]
 }
