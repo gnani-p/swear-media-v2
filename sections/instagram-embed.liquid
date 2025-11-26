@@ -13,28 +13,15 @@
 
       {% for block in section.blocks %}
         <div class="instagram-post-item" {{ block.shopify_attributes }}>
-          <a href="{{ block.settings.post_url }}" target="_blank" rel="noopener noreferrer">
-            {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.block_title | escape }}" class="w-full h-full object-cover">
-            {% else %}
-              <div class="bg-swear-gray p-4 text-center border-dashed border-2 border-concrete h-full flex flex-col items-center justify-center">
-                <p class="font-mono text-xs text-concrete">
-                  [Grid Item {{ forloop.index }}] Add an image.
-                </p>
-              </div>
-            {% endif %}
-          </a>
+          <blockquote class="instagram-media" data-instgrm-permalink="{{ block.settings.post_url }}" data-instgrm-version="14" style="max-width: 320px; width: 100%;"></blockquote>
         </div>
       {% endfor %}
+
     </div>
+    <script async src="//www.instagram.com/embed.js"></script>
   {% else %}
-    <div class="bg-swear-gray p-12 text-center border-dashed border-2 border-concrete">
-      <p class="font-mono text-sm text-concrete mb-2">
-        [Instagram Grid] No posts added yet.
-      </p>
-      <p class="font-mono text-xs text-concrete">
-        Click "Add Instagram Post" in the section settings to begin.
-      </p>
+    <div class="text-center">
+      <p>Add Instagram posts to this section in the theme editor.</p>
     </div>
   {% endif %}
 </div>
@@ -58,20 +45,9 @@
       "name": "Instagram Post",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Post Image"
-        },
-        {
           "type": "url",
           "id": "post_url",
           "label": "Post URL"
-        },
-        {
-          "type": "text",
-          "id": "block_title",
-          "label": "Post Title (Optional)",
-          "info": "e.g., 'New Film Trailer'"
         }
       ]
     }
