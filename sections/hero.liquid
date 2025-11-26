@@ -58,6 +58,20 @@
       {% endfor %}
     </div>
   </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var desktopVideo = document.querySelector('.desktop-video');
+      var mobileVideo = document.querySelector('.mobile-video');
+
+      if (desktopVideo) {
+        desktopVideo.playbackRate = 1.75;
+      }
+      if (mobileVideo) {
+        mobileVideo.playbackRate = 1.75;
+      }
+    });
+  </script>
 </div>
 
 {% schema %}
