@@ -77,9 +77,9 @@
       "type": "trend-report",
       "settings": {
         "title": "Weekly // Trend Report",
-        "source": "KAI GORDON",
-        "headline": "IMPULSIVE CREATIVITY",
-        "body_text": "\"IF YOU NOT LIVING LIFE ON THE EDGE <br> THEN YOU TAKING UP SPACE\"",
+        "source": "SWEAR Scraper API",
+        "headline": "New visual paradigms",
+        "body_text": "The scene is heating up near the Short North. Last weekend's pop-up was a flashpoint for emerging graphic designers, focusing on anti-corporate stencil work and decentralized art distribution. We acquired new assets documenting the event.",
         "link": "https://youtu.be/9YFA9Q5Oxaw?si=OgKcIS8DWGf0f86E"
       }
     },
@@ -102,26 +102,6 @@
         "product_11": "",
         "product_12": ""
       }
-    },
-    "brands_service_package_FC3xh7": {
-      "type": "brands-service-package",
-      "name": "Service Package Selection",
-      "settings": {
-        "title": "Service Packages",
-        "products_to_show": 3,
-        "product_1": "",
-        "product_2": "",
-        "product_3": "",
-        "product_4": "",
-        "product_5": "",
-        "product_6": "",
-        "product_7": "",
-        "product_8": "",
-        "product_9": "",
-        "product_10": "",
-        "product_11": "",
-        "product_12": ""
-      }
     }
   },
   "order": [
@@ -129,7 +109,6 @@
     "grid",
     "instagram_embed_tzMMwh",
     "trend",
-    "brands_service_package_Y96Vnt",
-    "brands_service_package_FC3xh7"
+    "brands_service_package_Y96Vnt"
   ]
 }
