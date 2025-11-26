@@ -27,34 +27,16 @@
         "link_4_url": "https://swearmedia.com/pages/portraits"
       }
     },
-    "instagram_embed_tzMMwh": {
-      "type": "instagram-embed",
-      "blocks": {
-        "instagram_post_CtWfjP": {
-          "type": "instagram_post",
-          "settings": {
-            "post_url": "https://www.instagram.com/p/CpjbEIxNWG3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-          }
-        }
-      },
-      "block_order": [
-        "instagram_post_CtWfjP"
-      ],
-      "name": "Small Instagram Grid",
-      "settings": {
-        "title": "Latest from Swear Media"
-      }
-    },
     "grid": {
       "type": "featured-grid",
       "blocks": {
         "card_qYNpD9": {
           "type": "card",
           "settings": {
-            "title": "Project Title",
-            "tag1": "MiniDoc",
-            "tag2": "Streets",
-            "link": ""
+            "title": "дема",
+            "tag1": "Horror",
+            "tag2": "Short film",
+            "link": "https://swearmedia.com/products/%D0%B4%D0%B5%D0%BC%D0%B0"
           }
         }
       },
@@ -64,6 +46,31 @@
       "settings": {
         "title": "Most Recent // Collaborations",
         "view_all_link": ""
+      }
+    },
+    "instagram_embed_tzMMwh": {
+      "type": "instagram-embed",
+      "blocks": {
+        "instagram_post_fQY39r": {
+          "type": "instagram_post",
+          "settings": {
+            "post_url": ""
+          }
+        },
+        "instagram_post_CtWfjP": {
+          "type": "instagram_post",
+          "settings": {
+            "post_url": "https://www.instagram.com/p/CpjbEIxNWG3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+          }
+        }
+      },
+      "block_order": [
+        "instagram_post_fQY39r",
+        "instagram_post_CtWfjP"
+      ],
+      "name": "Small Instagram Grid",
+      "settings": {
+        "title": "Latest from Swear Media"
       }
     },
     "trend": {
@@ -119,8 +126,8 @@
   },
   "order": [
     "hero",
-    "instagram_embed_tzMMwh",
     "grid",
+    "instagram_embed_tzMMwh",
     "trend",
     "brands_service_package_Y96Vnt",
     "brands_service_package_FC3xh7"
