@@ -36,6 +36,23 @@
           "product_11": "",
           "product_12": ""
         }
+      },
+      "instagram-embed": {
+        "type": "instagram-embed",
+        "blocks": {
+          "instagram_post_3Hc4bB": {
+            "type": "instagram_post",
+            "settings": {
+              "post_url": "https://www.instagram.com/p/DRVTK1xkkeP/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          }
+        },
+        "block_order": [
+          "instagram_post_3Hc4bB"
+        ],
+        "settings": {
+          "title": "Latest from Swear Media"
+        }
       }
     },
     "content_for_index": []
