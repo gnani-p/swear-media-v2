@@ -1,0 +1,76 @@
+<section class="container" style="padding: 4rem 20px;">
+  <h2 class="font-stencil uppercase" style="font-size: 3rem; border-bottom: 2px solid var(--swear-white); padding-bottom: 1rem; margin-bottom: 3rem;">
+    {{ section.settings.title }}
+  </h2>
+
+  <div class="logo-grid-container">
+    {% for block in section.blocks %}
+      <div class="logo-item">
+        <a href="{{ block.settings.link }}" class="block" target="_blank">
+          {% if block.settings.image != blank %}
+            <img src="{{ block.settings.image | img_url: '400x' }}" alt="{{ block.settings.image.alt | escape }}" class="logo-image">
+          {% else %}
+            <div class="placeholder-logo" style="width: 150px; height: 150px; background: #222; display: flex; align-items: center; justify-content: center;">
+              <span class="text-white">Logo</span>
+            </div>
+          {% endif %}
+        </a>
+      </div>
+    {% endfor %}
+  </div>
+</section>
+
+<style>
+  .logo-grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+  }
+  .logo-image {
+    max-width: 100%;
+    height: auto;
+    transition: transform 0.3s ease;
+  }
+  .logo-item:hover .logo-image {
+    transform: scale(1.1);
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Brand Logos",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Title",
+      "default": "Our Partners"
+    }
+  ],
+  "blocks": [
+    {
+      "type": "logo",
+      "name": "Brand Logo",
+      "settings": [
+        {
+          "type": "image_picker",
+          "id": "image",
+          "label": "Logo Image"
+        },
+        {
+          "type": "url",
+          "id": "link",
+          "label": "Link to Brand"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Brand Logos"
+    }
+  ]
+}
+{% endschema %}
