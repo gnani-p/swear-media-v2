@@ -6,7 +6,12 @@
 
   <div class="page-content font-mono" style="font-size: 1.125rem; line-height: 1.6;">
     {{ page.content }}
-    {% include 'contact-form' %}
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-12 mt-8">
+      {% include 'contact-info' %}
+      <div class="p-6 border border-swear-gray bg-swear-black shadow-inner">
+        {% include 'contact-form' %}
+      </div>
+    </div>
   </div>
 
 </div>
