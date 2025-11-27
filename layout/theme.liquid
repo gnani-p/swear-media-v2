@@ -8,6 +8,28 @@
 
     <title>{{ page_title }} | SWEAR MEDIA</title>
 
+    <meta name="description" content="SWEAR Media is a creative agency specializing in film, photography, and brand development. We create compelling visual content that tells your story.">
+    <meta name="keywords" content="creative agency, film, photography, brand development, video production, content creation">
+
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="{{ canonical_url }}">
+    <meta property="og:title" content="{{ page_title }} | SWEAR MEDIA">
+    <meta property="og:description" content="SWEAR Media is a creative agency specializing in film, photography, and brand development. We create compelling visual content that tells your story.">
+    {% if page_image %}
+    <meta property="og:image" content="http:{{ page_image | img_url: 'master' }}">
+    <meta property="og:image:secure_url" content="https:{{ page_image | img_url: 'master' }}">
+    {% endif %}
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="{{ canonical_url }}">
+    <meta property="twitter:title" content="{{ page_title }} | SWEAR MEDIA">
+    <meta property="twitter:description" content="SWEAR Media is a creative agency specializing in film, photography, and brand development. We create compelling visual content that tells your story.">
+    {% if page_image %}
+    <meta property="twitter:image" content="http:{{ page_image | img_url: 'master' }}">
+    {% endif %}
+
     <!-- Google Fonts: Oswald (Stencil) & Space Mono (Code) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -17,6 +39,19 @@
     {{ 'base.css' | asset_url | stylesheet_tag }}
 
     {{ content_for_header }}
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "Organization",
+      "name": "SWEAR Media",
+      "url": "{{ shop.url }}",
+      "logo": "{{ 'logo.png' | asset_url }}",
+      "sameAs": [
+        "https://www.instagram.com/swear.media/"
+      ]
+    }
+    </script>
   </head>
 
   <body class="swear-body">

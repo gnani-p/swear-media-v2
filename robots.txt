@@ -1,0 +1,19 @@
+#
+# Each robot has a user agent. If you know the user agent of the robot you
+# want to block, you can specify it here. You can use wildcards.
+#
+# For more information about the robots.txt standard, see:
+# https://www.robotstxt.org/robotstxt.html
+
+User-agent: *
+Disallow: /admin
+Disallow: /cart
+Disallow: /orders
+Disallow: /checkouts
+Disallow: /search
+
+# Allow all other content
+Allow: /
+
+# Sitemap
+Sitemap: {{ shop.url }}/sitemap.xml
