@@ -1,0 +1,66 @@
+{% comment %}
+  Template: Portraits Library
+  Role: Displays a grid of portrait images.
+{% endcomment %}
+
+<div class="film-library container" style="padding-top: 6rem; padding-bottom: 6rem;">
+  
+  <!-- Header -->
+  <header class="library-header flex justify-between items-end mb-12 border-b border-swear-white pb-4">
+    <div>
+      <h1 class="font-stencil uppercase" style="font-size: 4rem; line-height: 1;">{{ collection.title }}</h1>
+      <p class="font-mono text-concrete mt-2">// {{ collection.all_products_count }} DOCUMENTS ARCHIVED</p>
+    </div>
+    <div class="font-mono text-sm text-accent animate-pulse">
+      ● SYSTEM ONLINE
+    </div>
+  </header>
+
+  <!-- The Video Grid -->
+  <div class="grid-container">
+    {% for film in collection.products %}
+      <a href="{{ film.url }}" class="film-card group relative block bg-black border border-swear-gray overflow-hidden">
+        
+        <!-- Thumbnail Wrapper -->
+        <div class="ratio-16-9 relative w-full" style="aspect-ratio: 16/9; overflow: hidden;">
+          {% if film.featured_media.media_type == 'video' %}
+            <!-- If Shopify hosted video, grab preview -->
+            <img src="{{ film.featured_media.preview_image | img_url: '800x' }}" class="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt="{{ film.title }}">
+            <!-- Play Icon Overlay -->
+            <div class="play-overlay absolute inset-0 flex items-center justify-center bg-black bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+               <span class="font-stencil text-white text-4xl">▶ WATCH</span>
+            </div>
+          {% elsif film.featured_image %}
+             <img src="{{ film.featured_image | img_url: '800x' }}" class="w-full h-full object-cover grayscale group-hover:grayscale-0 transition-all" alt="{{ film.title }}">
+          {% else %}
+             <div class="w-full h-full bg-swear-gray flex items-center justify-center font-mono text-xs">NO SIGNAL</div>
+          {% endif %}
+        </div>
+
+        <!-- Meta Data -->
+        <div class="p-4 border-t border-swear-gray bg-swear-black relative z-10">
+          <h3 class="font-stencil text-xl text-white group-hover:text-accent truncate">{{ film.title }}</h3>
+          <div class="flex justify-between mt-2 font-mono text-xs text-concrete">
+            <span>{{ film.created_at | date: "%Y.%m.%d" }}</span>
+            <span>{{ film.tags | first | upcase }}</span>
+          </div>
+        </div>
+      </a>
+    {% else %}
+      <div class="col-span-full text-center py-20 font-mono text-concrete">
+        // ARCHIVE EMPTY. UPLOAD FOOTAGE.
+      </div>
+    {% endfor %}
+  </div>
+
+</div>
+
+{% section 'instagram-embed' %}
+
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: 2rem;
+  }
+</style>
