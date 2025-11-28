@@ -14,7 +14,11 @@
     </nav>
     
     <!-- Mobile Toggle -->
-    <div class="mobile-toggle text-accent" style="font-size: 24px; cursor: pointer;">☰</div>
+    <div class="mobile-toggle">
+      <div class="bar1"></div>
+      <div class="bar2"></div>
+      <div class="bar3"></div>
+    </div>
   </div>
 </header>
 
@@ -22,27 +26,20 @@
 
 <script>
   document.querySelector('.mobile-toggle').addEventListener('click', function() {
-    document.getElementById('side-menu').style.width = '250px';
+    this.classList.toggle('change');
+    var menu = document.getElementById('side-menu');
+    if (menu.style.width === '250px') {
+      menu.style.width = '0';
+    } else {
+      menu.style.width = '250px';
+    }
   });
 
   document.querySelector('.close-btn').addEventListener('click', function() {
+    document.querySelector('.mobile-toggle').classList.remove('change');
     document.getElementById('side-menu').style.width = '0';
   });
 </script>
-
-<style>
-  .site-header {
-    position: fixed; top: 0; left: 0; right: 0; z-index: 100;
-    background: var(--swear-black);
-    border-bottom: 1px solid rgba(77, 77, 77, 0.5);
-  }
-  .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
-  .desktop-nav { display: flex; gap: 24px; font-size: 14px; }
-  .nav-link:hover { color: var(--swear-white); text-decoration: underline; text-decoration-thickness: 2px; }
-  @media(max-width: 768px) {
-    .desktop-nav { display: none; }
-  }
-</style>
 
 {% schema %}
 { "name": "Header", "settings": [] }
