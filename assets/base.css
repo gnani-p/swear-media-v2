@@ -49,21 +49,14 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
   border-bottom: 1px solid rgba(77, 77, 77, 0.5);
 }
 .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
-.desktop-nav { display: flex; gap: 24px; font-size: 14px; }
+.desktop-nav { display: none; }
 .nav-link:hover { color: var(--swear-white); text-decoration: underline; text-decoration-thickness: 2px; }
 
 /* --- Mobile Nav --- */
 .mobile-toggle {
-  display: none;
+  display: block;
   cursor: pointer;
   z-index: 102; /* Ensure it's above side-menu */
-}
-
-@media(max-width: 768px) {
-  .desktop-nav { display: none; }
-  .mobile-toggle {
-    display: block;
-  }
 }
 
 .bar1, .bar2, .bar3 {

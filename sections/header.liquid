@@ -27,17 +27,12 @@
 <script>
   document.querySelector('.mobile-toggle').addEventListener('click', function() {
     this.classList.toggle('change');
-    var menu = document.getElementById('side-menu');
-    if (menu.style.width === '250px') {
-      menu.style.width = '0';
-    } else {
-      menu.style.width = '250px';
-    }
+    document.getElementById('side-menu').classList.toggle('open');
   });
 
   document.querySelector('.close-btn').addEventListener('click', function() {
     document.querySelector('.mobile-toggle').classList.remove('change');
-    document.getElementById('side-menu').style.width = '0';
+    document.getElementById('side-menu').classList.remove('open');
   });
 </script>
 
