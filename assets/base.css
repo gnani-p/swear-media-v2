@@ -50,6 +50,16 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
 }
 .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
 .desktop-nav { display: none; }
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+    gap: 20px; /* Add some spacing between links */
+  }
+  .mobile-toggle {
+    display: none;
+  }
+}
 .nav-link:hover { color: var(--swear-white); text-decoration: underline; text-decoration-thickness: 2px; }
 
 /* --- Mobile Nav --- */
