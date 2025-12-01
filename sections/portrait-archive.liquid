@@ -1,0 +1,275 @@
+{%- comment -%}
+  ********************************************************************************************************************
+  *
+  *  [SWEAR MEDIA V2] - PORTRAIT ARCHIVE / GLITCH GRID
+  *  -------------------------------------------------
+  *  - Renders a masonry-style grid of portrait images from a selected collection.
+  *  - Implements a CSS-only hover effect ('ACCESS FILE' glitch overlay).
+  *  - Includes a JavaScript-powered modal/lightbox for full-size image viewing and a high-conversion CTA.
+  *
+  ********************************************************************************************************************
+{%- endcomment -%}
+
+{%- liquid
+  assign portrait_collection = collections[section.settings.portrait_collection]
+-%}
+
+<style>
+  :root {
+    --swear-black: #111111;
+    --swear-white: #F0F0F0;
+    --swear-gray: #4D4D4D;
+    --swear-accent: #F0F0F0;
+    --font-stencil: 'Oswald', sans-serif;
+    --font-mono: 'Space Mono', monospace;
+  }
+
+  .portrait-archive-grid {
+    column-gap: 10px;
+    padding: 10px;
+    
+    /* Responsive Columns */
+    column-count: 2;
+  }
+
+  @media (min-width: 640px) {
+    .portrait-archive-grid {
+      column-count: 3;
+    }
+  }
+
+  @media (min-width: 1024px) {
+    .portrait-archive-grid {
+      column-count: 4;
+    }
+  }
+
+  .archive-item {
+    position: relative;
+    display: inline-block; /* Important for masonry */
+    width: 100%;
+    margin-bottom: 10px;
+    border: 1px solid var(--swear-gray);
+    overflow: hidden; /* Contains the scaling image */
+    break-inside: avoid; /* Prevents items from breaking across columns */
+  }
+
+  .archive-item__image {
+    width: 100%;
+    height: auto;
+    display: block;
+    transition: transform 0.3s ease-out;
+  }
+
+  .archive-item__overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: rgba(0, 0, 0, 0.4);
+    opacity: 0;
+    pointer-events: none;
+    transition: opacity 0.3s ease-out;
+    font-family: var(--font-mono);
+    color: var(--swear-accent);
+    font-size: 1rem;
+    text-shadow: 0 0 5px var(--swear-black);
+  }
+
+  .archive-item:hover .archive-item__image {
+    transform: scale(1.05);
+  }
+
+  .archive-item:hover .archive-item__overlay {
+    opacity: 1;
+    animation: glitch-flicker 0.5s infinite steps(1);
+  }
+
+  @keyframes glitch-flicker {
+    0% { opacity: 1; text-shadow: 0 0 2px var(--swear-accent); }
+    25% { opacity: 0.7; transform: translate(1px, -1px); }
+    50% { opacity: 1; text-shadow: 0 0 5px var(--swear-accent); }
+    75% { opacity: 0.6; transform: translate(-1px, 1px); }
+    100% { opacity: 0.9; }
+  }
+  
+  /* --- MODAL / LIGHTBOX --- */
+  .portrait-archive-modal {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(17, 17, 17, 0.95); /* --swear-black with transparency */
+    z-index: 1000;
+    display: none; /* Hidden by default */
+    align-items: center;
+    justify-content: center;
+    padding: 20px;
+    backdrop-filter: blur(5px);
+  }
+
+  .portrait-archive-modal.active {
+    display: flex;
+  }
+
+  .modal-content {
+    position: relative;
+    text-align: center;
+    max-width: 90vw;
+    max-height: 95vh;
+  }
+
+  .modal-image {
+    max-width: 100%;
+    max-height: calc(95vh - 120px); /* Leave space for button */
+    height: auto;
+    border: 2px solid var(--swear-gray);
+  }
+
+  .modal-close {
+    position: absolute;
+    top: -40px;
+    right: 0;
+    font-family: var(--font-mono);
+    font-size: 24px;
+    color: var(--swear-white);
+    cursor: pointer;
+    background: none;
+    border: none;
+  }
+  .modal-close:hover {
+    color: var(--swear-accent);
+  }
+
+  .modal-cta-button {
+    display: block;
+    width: fit-content;
+    margin: 20px auto 0;
+    padding: 15px 30px;
+    font-family: var(--font-stencil);
+    font-size: 1.5rem;
+    color: var(--swear-black);
+    background-color: var(--swear-accent);
+    text-transform: uppercase;
+    text-decoration: none;
+    border: 1px solid var(--swear-accent);
+    transition: background-color 0.3s, color 0.3s;
+  }
+  .modal-cta-button:hover {
+    background-color: transparent;
+    color: var(--swear-accent);
+  }
+
+</style>
+
+<div class="portrait-archive-container container">
+  {%- if portrait_collection.products.size > 0 -%}
+    <div class="portrait-archive-grid">
+      {%- for product in portrait_collection.products -%}
+        {%- if product.featured_image -%}
+          <a href="{{ product.url }}"
+             class="archive-item"
+             data-full-image-url="{{ product.featured_image | image_url }}">
+            <img src="{{ product.featured_image | image_url: width: 600 }}"
+                 alt="{{ product.featured_image.alt | escape }}"
+                 loading="lazy"
+                 class="archive-item__image"
+                 width="{{ product.featured_image.width }}"
+                 height="{{ product.featured_image.height }}">
+            <div class="archive-item__overlay">
+              <span>ACCESS FILE</span>
+            </div>
+          </a>
+        {%- endif -%}
+      {%- endfor -%}
+    </div>
+  {%- else -%}
+    <p class="text-center">No products found in the selected collection.</p>
+  {%- endif -%}
+</div>
+
+<!-- MODAL STRUCTURE -->
+<div id="portraitArchiveModal" class="portrait-archive-modal">
+  <div class="modal-content">
+    <button id="modalCloseBtn" class="modal-close">CLOSE</button>
+    <img id="modalImage" src="" alt="Full-size portrait" class="modal-image">
+    <a href="/collections/services" class="modal-cta-button">
+      INITIATE BOOKING
+    </a>
+  </div>
+</div>
+
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const modal = document.getElementById('portraitArchiveModal');
+    if (!modal) return;
+
+    const modalImage = document.getElementById('modalImage');
+    const modalCloseBtn = document.getElementById('modalCloseBtn');
+    const imageLinks = document.querySelectorAll('.archive-item');
+
+    imageLinks.forEach(link => {
+      link.addEventListener('click', (event) => {
+        event.preventDefault(); // Prevent navigating to product page
+        
+        const fullImageUrl = link.dataset.fullImageUrl;
+        if (fullImageUrl && modalImage) {
+          modalImage.setAttribute('src', fullImageUrl);
+          modal.classList.add('active');
+          document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        }
+      });
+    });
+
+    const closeModal = () => {
+      modal.classList.remove('active');
+      document.body.style.overflow = ''; // Restore scrolling
+    };
+    
+    if(modalCloseBtn) {
+      modalCloseBtn.addEventListener('click', closeModal);
+    }
+
+    // Also close modal if user clicks on the background overlay
+    modal.addEventListener('click', (event) => {
+      if (event.target === modal) {
+        closeModal();
+      }
+    });
+
+    // Close with escape key
+    document.addEventListener('keydown', (event) => {
+      if (event.key === 'Escape' && modal.classList.contains('active')) {
+        closeModal();
+      }
+    });
+  });
+</script>
+
+
+{% schema %}
+{
+  "name": "Portrait Archive",
+  "class": "section-portrait-archive",
+  "settings": [
+    {
+      "type": "collection",
+      "id": "portrait_collection",
+      "label": "Portrait Collection",
+      "info": "Select the collection to pull portrait images from. Only the first image of each product will be shown."
+    }
+  ],
+  "presets": [
+    {
+      "name": "Portrait Archive Grid",
+      "category": "Image"
+    }
+  ]
+}
+{% endschema %}
