@@ -27,27 +27,6 @@
         "link_4_url": "https://swearmedia.com/pages/portraits"
       }
     },
-    "grid": {
-      "type": "featured-grid",
-      "blocks": {
-        "card_qYNpD9": {
-          "type": "card",
-          "settings": {
-            "title": "дема",
-            "tag1": "Horror",
-            "tag2": "Short film",
-            "link": "https://swearmedia.com/products/%D0%B4%D0%B5%D0%BC%D0%B0"
-          }
-        }
-      },
-      "block_order": [
-        "card_qYNpD9"
-      ],
-      "settings": {
-        "title": "Most Recent // Collaborations",
-        "view_all_link": ""
-      }
-    },
     "instagram_embed_tzMMwh": {
       "type": "instagram-embed",
       "blocks": {
@@ -71,6 +50,27 @@
       "name": "Small Instagram Grid",
       "settings": {
         "title": "Latest from Swear Media"
+      }
+    },
+    "grid": {
+      "type": "featured-grid",
+      "blocks": {
+        "card_qYNpD9": {
+          "type": "card",
+          "settings": {
+            "title": "дема",
+            "tag1": "Horror",
+            "tag2": "COMING SOON",
+            "link": "https://swearmedia.com/products/%D0%B4%D0%B5%D0%BC%D0%B0"
+          }
+        }
+      },
+      "block_order": [
+        "card_qYNpD9"
+      ],
+      "settings": {
+        "title": "Most Recent // Collaborations",
+        "view_all_link": ""
       }
     },
     "trend": {
@@ -106,8 +106,8 @@
   },
   "order": [
     "hero",
-    "grid",
     "instagram_embed_tzMMwh",
+    "grid",
     "trend",
     "brands_service_package_Y96Vnt"
   ]
