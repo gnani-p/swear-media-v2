@@ -142,6 +142,13 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
   background: transparent;
   color: var(--swear-white);
 }
+
+@media (max-width: 768px) {
+  .btn {
+    padding: 8px 16px; /* Smaller padding */
+    font-size: 10px;   /* Smaller font size */
+  }
+}
 .btn:hover { 
   background: var(--swear-white); 
   color: var(--swear-black); 
