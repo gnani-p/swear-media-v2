@@ -4,9 +4,7 @@
 {% endcomment %}
 
 <div class="section-instagram-grid container mx-auto py-8 md:py-12 px-4" data-section-id="{{ section.id }}">
-  {% if section.settings.title != blank %}
-    <h2 class="font-stencil uppercase text-2xl mb-8 text-center text-white">{{ section.settings.title }}</h2>
-  {% endif %}
+
 
   {% if section.blocks.size > 0 %}
     <div class="instagram-grid">
@@ -60,6 +58,12 @@
     width: 100%;
     height: 100%;
     object-fit: cover; /* Maintain aspect ratio and cover the area */
+  }
+
+  @media (max-width: 768px) {
+    .section-instagram-grid .instagram-post-item {
+      flex: 0 0 calc(48% - 5px); /* Two images per row on mobile */
+    }
   }
 </style>
 
