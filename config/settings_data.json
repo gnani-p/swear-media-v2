@@ -60,16 +60,39 @@
           "instagram_post_6eAkfQ": {
             "type": "instagram_post",
             "settings": {
+              "image": "shopify://shop_images/584063888_18248403568295868_5855697198898574391_n.jpg",
               "post_url": "https://www.instagram.com/p/DRVTK1xkkeP/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
             }
           },
           "instagram_post_VnDr7G": {
             "type": "instagram_post",
             "settings": {
+              "image": "shopify://shop_images/531198872_18235311130295868_8146800130044926268_n.jpg",
               "post_url": "https://www.instagram.com/p/DNPnuu6OhYH/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
             }
           },
           "instagram_post_X9rADU": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/572881035_18245207038295868_3484644614984339134_n.jpg",
+              "post_url": "https://www.instagram.com/p/DQVXwy0jXMc/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_hFJGh8": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/565176836_18243541498295868_1857942861640042547_n.jpg",
+              "post_url": "https://www.instagram.com/p/DP4oxf_kiN-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_LRij79": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/562676013_18243307492295868_665506330453486417_n.jpg",
+              "post_url": "https://www.instagram.com/p/DPzKeLFkRmF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_pPMQVP": {
             "type": "instagram_post",
             "settings": {
               "post_url": ""
@@ -79,7 +102,10 @@
         "block_order": [
           "instagram_post_6eAkfQ",
           "instagram_post_VnDr7G",
-          "instagram_post_X9rADU"
+          "instagram_post_X9rADU",
+          "instagram_post_hFJGh8",
+          "instagram_post_LRij79",
+          "instagram_post_pPMQVP"
         ],
         "settings": {
           "title": "Portraits on Instagram"
