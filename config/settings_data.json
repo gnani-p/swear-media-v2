@@ -16,7 +16,12 @@
       },
       "footer": {
         "type": "footer",
-        "settings": {}
+        "settings": {
+          "social_instagram_link": "https://instagram.com/swearmedia",
+          "social_youtube_link": "https://www.youtube.com/@SWEARmedia",
+          "social_tiktok_link": "",
+          "social_discord_link": ""
+        }
       },
       "brands-service-package": {
         "type": "brands-service-package",
