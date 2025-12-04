@@ -53,6 +53,37 @@
         "settings": {
           "title": "Latest from Swear Media"
         }
+      },
+      "instagram-grid-portraits": {
+        "type": "instagram-grid-portraits",
+        "blocks": {
+          "instagram_post_6eAkfQ": {
+            "type": "instagram_post",
+            "settings": {
+              "post_url": "https://www.instagram.com/p/DRVTK1xkkeP/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_VnDr7G": {
+            "type": "instagram_post",
+            "settings": {
+              "post_url": "https://www.instagram.com/p/DNPnuu6OhYH/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_X9rADU": {
+            "type": "instagram_post",
+            "settings": {
+              "post_url": ""
+            }
+          }
+        },
+        "block_order": [
+          "instagram_post_6eAkfQ",
+          "instagram_post_VnDr7G",
+          "instagram_post_X9rADU"
+        ],
+        "settings": {
+          "title": "Portraits on Instagram"
+        }
       }
     },
     "content_for_index": []
