@@ -1,0 +1,69 @@
+{% comment %}
+  Shopify Section: Instagram Grid
+  Role: Displays multiple Instagram posts in a compact, responsive grid.
+{% endcomment %}
+
+<div class="section-instagram-grid container mx-auto py-8 md:py-12 px-4" data-section-id="{{ section.id }}">
+  {% if section.settings.title != blank %}
+    <h2 class="font-stencil uppercase text-2xl mb-8 text-center text-white">{{ section.settings.title }}</h2>
+  {% endif %}
+
+  {% if section.blocks.size > 0 %}
+    <div class="instagram-grid grid gap-4 grid-cols-2 sm:grid-cols-4">
+
+      {% for block in section.blocks %}
+        <div class="instagram-post-item" {{ block.shopify_attributes }}>
+          <blockquote class="instagram-media" data-instgrm-permalink="{{ block.settings.post_url }}" data-instgrm-version="14" style="max-width: 320px; width: 100%;"></blockquote>
+        </div>
+      {% endfor %}
+
+    </div>
+    <script async src="//www.instagram.com/embed.js"></script>
+  {% else %}
+    <div class="text-center">
+      <p>Add Instagram posts to this section in the theme editor.</p>
+    </div>
+  {% endif %}
+</div>
+
+{% schema %}
+{
+  "name": "Portraits Instagram Grid",
+  "tag": "section",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Section Heading",
+      "default": "Portraits on Instagram",
+      "info": "Heading above the grid."
+    }
+  ],
+  "blocks": [
+    {
+      "type": "instagram_post",
+      "name": "Instagram Post",
+      "settings": [
+        {
+          "type": "url",
+          "id": "post_url",
+          "label": "Post URL"
+        }
+      ]
+    }
+  ],
+  "presets": [
+    {
+      "name": "Portraits Instagram Grid",
+      "category": "Social",
+      "blocks": [
+        { "type": "instagram_post" },
+        { "type": "instagram_post" },
+        { "type": "instagram_post" },
+        { "type": "instagram_post" }
+      ]
+    }
+  ],
+  "max_blocks": 12
+}
+{% endschema %}
