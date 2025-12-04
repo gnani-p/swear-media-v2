@@ -9,7 +9,7 @@
   {% endif %}
 
   {% if section.blocks.size > 0 %}
-    <div class="instagram-grid grid gap-4 grid-cols-2 sm:gunchurad-cols-4">
+    <div class="instagram-grid">
 
       {% for block in section.blocks %}
         <div class="instagram-post-item" {{ block.shopify_attributes }}>
@@ -30,6 +30,38 @@
     </div>
   {% endif %}
 </div>
+
+<style>
+  .section-instagram-grid .instagram-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 5px; /* Minimum 5px gutter */
+    justify-content: flex-start; /* Align items to the start */
+  }
+
+  .section-instagram-grid .instagram-post-item {
+    flex: 0 0 calc(30% - 5px); /* Occupy 30% width, accounting for gap */
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .section-instagram-grid .instagram-post-item a {
+    display: block;
+    width: 100%;
+    /* Maintain aspect ratio */
+    padding-top: 100%; /* For square images */
+    position: relative;
+  }
+
+  .section-instagram-grid .instagram-post-item img {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Maintain aspect ratio and cover the area */
+  }
+</style>
 
 {% schema %}
 {
