@@ -4,31 +4,27 @@
       // BORN IN COLUMBUS. BUILT FOR THE WORLD.
     </p>
 
+<p class="font-stencil text-accent uppercase" style="letter-spacing: 2px;">
+      // BORN IN COLUMBUS. BUILT FOR THE WORLD.
+    </p>
+
     <div class="social-links" style="margin-top: 1.5rem; margin-bottom: 1.5rem;">
-      {% if section.settings.social_instagram_link != blank %}
-        <a href="{{ section.settings.social_instagram_link | default: '#' }}" class="social-link" style="display: inline-block; margin: 0 10px; color: var(--swear-white);" target="_blank" rel="noopener noreferrer">
-          <!-- Instagram Icon - Set this link in the Theme Editor -->
-          <svg xmlns="https://instagram.com/swearmedia" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
-        </a>
-      {% endif %}
-      {% if section.settings.social_youtube_link != blank %}
-        <a href="{{ section.settings.social_youtube_link | default: '#' }}" class="social-link" style="display: inline-block; margin: 0 10px; color: var(--swear-white);" target="_blank" rel="noopener noreferrer">
-          <!-- YouTube Icon - Set this link in the Theme Editor -->
-          <svg xmlns="https://www.youtube.com/@SWEARmedia" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
-        </a>
-      {% endif %}
-      {% if section.settings.social_tiktok_link != blank %}
-        <a href="{{ section.settings.social_tiktok_link | default: '#' }}" class="social-link" style="display: inline-block; margin: 0 10px; color: var(--swear-white);" target="_blank" rel="noopener noreferrer">
-          <!-- TikTok Icon - Set this link in the Theme Editor -->
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h-2a4 4 0 0 0-4 4v10.5a2.5 2.5 0 1 0 5 0V11a2 2 0 0 1 2-2h2V4z"></path><path d="M6 10a4 4 0 1 0 4 4V4h2"></path></svg>
-        </a>
-      {% endif %}
-      {% if section.settings.social_discord_link != blank %}
-        <a href="{{ section.settings.social_discord_link | default: '#' }}" class="social-link" style="display: inline-block; margin: 0 10px; color: var(--swear-white);" target="_blank" rel="noopener noreferrer">
-          <!-- Discord Icon - Set this link in the Theme Editor -->
-          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.12,14.15a1,1,0,0,0-.4-1.34,9,9,0,0,1-3.33-2.15,1,1,0,0,0-1.12.09,5,5,0,0,0-5.14,0,1,1,0,0,0-1.12-.09,9,9,0,0,1-3.33,2.15,1,1,0,0,0-.4,1.34,10,10,0,0,0,13.84,0Z"></path><path d="M7.42,10.18a2.5,2.5,0,1,0-3-2.5A2.5,2.5,0,0,0,7.42,10.18Z"></path><path d="M19.58,10.18a2.5,2.5,0,1,0-3-2.5A2.5,2.5,0,0,0,19.58,10.18Z"></path></svg>
-        </a>
-      {% endif %}
+      <a href="{{ section.settings.social_instagram_link | default: '#' }}" class="social-link" style="display: inline-block; margin: 0 10px; color: var(--swear-white);" target="_blank" rel="noopener noreferrer">
+        <!-- Instagram Icon - Set this link in the Theme Editor -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="2" y="2" width="20" height="20" rx="5" ry="5"></rect><path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z"></path><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"></line></svg>
+      </a>
+      <a href="{{ section.settings.social_youtube_link | default: '#' }}" class="social-link" style="display: inline-block; margin: 0 10px; color: var(--swear-white);" target="_blank" rel="noopener noreferrer">
+        <!-- YouTube Icon - Set this link in the Theme Editor -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22.54 6.42a2.78 2.78 0 0 0-1.94-2C18.88 4 12 4 12 4s-6.88 0-8.6.46a2.78 2.78 0 0 0-1.94 2A29 29 0 0 0 1 11.75a29 29 0 0 0 .46 5.33A2.78 2.78 0 0 0 3.4 19c1.72.46 8.6.46 8.6.46s6.88 0 8.6-.46a2.78 2.78 0 0 0 1.94-2A29 29 0 0 0 23 11.75a29 29 0 0 0-.46-5.33z"></path><polygon points="9.75 15.02 15.5 11.75 9.75 8.48 9.75 15.02"></polygon></svg>
+      </a>
+      <a href="{{ section.settings.social_tiktok_link | default: '#' }}" class="social-link" style="display: inline-block; margin: 0 10px; color: var(--swear-white);" target="_blank" rel="noopener noreferrer">
+        <!-- TikTok Icon - Set this link in the Theme Editor -->
+        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M16 4h-2a4 4 0 0 0-4 4v10.5a2.5 2.5 0 1 0 5 0V11a2 2 0 0 1 2-2h2V4z"></path><path d="M6 10a4 4 0 1 0 4 4V4h2"></path></svg>
+      </a>
+      <a href="{{ section.settings.social_discord_link | default: '#' }}" class="social-link" style="display: inline-block; margin: 0 10px; color: var(--swear-white);" target="_blank" rel="noopener noreferrer">
+        <!-- Discord Icon - Set this link in the Theme Editor -->
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M21.12,14.15a1,1,0,0,0-.4-1.34,9,9,0,0,1-3.33-2.15,1,1,0,0,0-1.12.09,5,5,0,0,0-5.14,0,1,1,0,0,0-1.12-.09,9,9,0,0,1-3.33,2.15,1,1,0,0,0-.4,1.34,10,10,0,0,0,13.84,0Z"></path><path d="M7.42,10.18a2.5,2.5,0,1,0-3-2.5A2.5,2.5,0,0,0,7.42,10.18Z"></path><path d="M19.58,10.18a2.5,2.5,0,1,0-3-2.5A2.5,2.5,0,0,0,19.58,10.18Z"></path></svg>
+      </a>
     </div>
 
     <p class="font-mono text-concrete text-xs" style="color: var(--swear-concrete);">
