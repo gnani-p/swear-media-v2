@@ -19,9 +19,6 @@
                 src="{{ block.settings.video.sources[0].url }}"
                 poster="{{ block.settings.video_placeholder_image | img_url: 'medium' }}"
                 playsinline
-                muted
-                loop
-                autoplay
                 class="w-full h-full object-cover"
               ></video>
             {% elsif block.settings.image != blank %}
@@ -44,13 +41,17 @@
 <style>
   .section-instagram-grid .instagram-grid {
     display: flex;
-    flex-wrap: wrap;
-    gap: 5px; /* Minimum 5px gutter */
-    justify-content: flex-start; /* Align items to the start */
+    gap: 10px;
+    overflow-x: auto;
+    scroll-behavior: smooth;
+    -webkit-overflow-scrolling: touch;
+    scroll-snap-type: x mandatory;
+    padding-bottom: 1rem;
   }
 
   .section-instagram-grid .instagram-post-item {
-    flex: 0 0 calc(30% - 5px); /* Occupy 30% width, accounting for gap */
+    flex: 0 0 100%;
+    scroll-snap-align: start;
     position: relative;
     overflow: hidden;
   }
@@ -72,6 +73,43 @@
     object-fit: cover; /* Maintain aspect ratio and cover the area */
   }
 </style>
+
+<script>
+  document.addEventListener('DOMContentLoaded', () => {
+    const section = document.querySelector('[data-section-id="{{ section.id }}"]');
+    const grid = section.querySelector('.instagram-grid');
+    const videos = section.querySelectorAll('video');
+
+    if (videos.length === 0) return;
+
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach(entry => {
+        const video = entry.target;
+        if (entry.isIntersecting) {
+          video.muted = true;
+          video.play().catch(e => console.error('Video play failed:', e));
+        } else {
+          video.pause();
+        }
+      });
+    }, { threshold: 0.5 });
+
+    videos.forEach((video, index) => {
+      observer.observe(video);
+
+      video.addEventListener('ended', () => {
+        const nextIndex = (index + 1) % videos.length;
+        const nextPostItem = videos[nextIndex].closest('.instagram-post-item');
+        if (nextPostItem) {
+          grid.scrollTo({
+            left: nextPostItem.offsetLeft,
+            behavior: 'smooth'
+          });
+        }
+      });
+    });
+  });
+</script>
 
 {% schema %}
 {
