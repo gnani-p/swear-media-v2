@@ -62,6 +62,20 @@
       "instagram-grid-portraits": {
         "type": "instagram-grid-portraits",
         "blocks": {
+          "instagram_post_DC4mwM": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/588934955_18023478848785494_2530629015313865271_n.jpg",
+              "post_url": "https://www.instagram.com/p/DSBMBf3AOf3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_HgnyPr": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/503985348_18231063880295868_2214896820461888632_n.jpg",
+              "post_url": "https://www.instagram.com/p/DLiuTzlusAn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
           "instagram_post_VnDr7G": {
             "type": "instagram_post",
             "settings": {
@@ -132,13 +146,6 @@
               "post_url": "https://www.instagram.com/p/DNRLfpjudXb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
             }
           },
-          "instagram_post_LEKhmj": {
-            "type": "instagram_post",
-            "settings": {
-              "image": "shopify://shop_images/491442129_18223941985295868_2356895104681954957_n.jpg",
-              "post_url": "https://www.instagram.com/p/DIud9E7ux12/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-            }
-          },
           "instagram_post_X9zCLQ": {
             "type": "instagram_post",
             "settings": {
@@ -148,6 +155,8 @@
           }
         },
         "block_order": [
+          "instagram_post_DC4mwM",
+          "instagram_post_HgnyPr",
           "instagram_post_VnDr7G",
           "instagram_post_7xcQg8",
           "instagram_post_8iBJ87",
@@ -158,7 +167,6 @@
           "instagram_post_LRij79",
           "instagram_post_R6xfaG",
           "instagram_post_pPMQVP",
-          "instagram_post_LEKhmj",
           "instagram_post_X9zCLQ"
         ],
         "settings": {
