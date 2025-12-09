@@ -12,10 +12,8 @@
     display: inline-block;
     overflow: hidden;
     white-space: nowrap;
-    border-right: .15em solid orange; /* The typewriter cursor */
     animation: 
-      typing var(--typing-duration, 2s) steps(var(--char-count, 11)) forwards,
-      blink-caret .75s step-end infinite;
+      typing var(--typing-duration, 1s) steps(var(--char-count, 11)) forwards;
     width: 0;
   }
 
@@ -24,15 +22,10 @@
     to { width: 100% }
   }
 
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: orange; }
-  }
-
   .fade-in-effect {
     opacity: 0;
     animation: fadeIn 2s ease-in-out forwards;
-    animation-delay: var(--typing-duration, 2s);
+    animation-delay: var(--typing-duration, 1s);
   }
 
   @keyframes fadeIn {
