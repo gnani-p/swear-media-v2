@@ -174,8 +174,8 @@
         {%- if product.featured_image -%}
           <a href="{{ product.url }}"
              class="archive-item"
-             data-full-image-url="{{ product.featured_image | image_url }}">
-            <img src="{{ product.featured_image | image_url: width: 600 }}"
+             data-full-image-url="{{ product.featured_image | image_url: 'master' }}">
+            <img src="{{ product.featured_image | image_url: 'master' }}"
                  alt="{{ product.featured_image.alt | escape }}"
                  loading="lazy"
                  class="archive-item__image"

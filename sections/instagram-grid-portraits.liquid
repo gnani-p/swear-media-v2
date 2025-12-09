@@ -13,7 +13,7 @@
         <div class="instagram-post-item" {{ block.shopify_attributes }}>
           <a href="{{ block.settings.post_url }}" target="_blank" rel="noopener noreferrer" class="block">
             {% if block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.image.alt | escape }}" class="w-full h-full object-cover">
+              <img src="{{ block.settings.image | img_url: 'master' }}" alt="{{ block.settings.image.alt | escape }}" class="w-full h-full object-cover">
             {% else %}
               <div class="bg-gray-200 w-full" style="padding-top: 100%;"></div>
             {% endif %}
