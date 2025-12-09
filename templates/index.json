@@ -32,22 +32,16 @@
     "instagram_embed_tzMMwh": {
       "type": "instagram-embed",
       "blocks": {
-        "instagram_post_fQY39r": {
-          "type": "instagram_post",
-          "settings": {
-            "post_url": ""
-          }
-        },
         "instagram_post_CtWfjP": {
           "type": "instagram_post",
           "settings": {
             "video": "shopify://files/videos/AQOJfywcLFz-vyVs6DQIJJ7VjEBrPByliup3NukOG5N2LawZS_ZQWnn2GU81JRX8KflSJWMoZTdcCDfd1UQuC-plL3w9SiEpeyHgMMQ.mp4",
+            "video_placeholder_image": "shopify://shop_images/565176836_18243541498295868_1857942861640042547_n.jpg",
             "post_url": "https://www.instagram.com/p/CpjbEIxNWG3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
           }
         }
       },
       "block_order": [
-        "instagram_post_fQY39r",
         "instagram_post_CtWfjP"
       ],
       "name": "Small Instagram Grid",
