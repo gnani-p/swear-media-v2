@@ -29,6 +29,49 @@
         "link_5_url": "shopify://pages/laurens-vintage-🎱"
       }
     },
+    "instagram_embed_qXHXKa": {
+      "type": "instagram-embed",
+      "blocks": {
+        "instagram_post_ApB8KE": {
+          "type": "instagram_post",
+          "settings": {
+            "video": "shopify://files/videos/AQOJfywcLFz-vyVs6DQIJJ7VjEBrPByliup3NukOG5N2LawZS_ZQWnn2GU81JRX8KflSJWMoZTdcCDfd1UQuC-plL3w9SiEpeyHgMMQ.mp4"
+          }
+        },
+        "instagram_post_dVRPpC": {
+          "type": "instagram_post",
+          "settings": {}
+        },
+        "instagram_post_hPLFAK": {
+          "type": "instagram_post",
+          "settings": {}
+        },
+        "instagram_post_pmLhD7": {
+          "type": "instagram_post",
+          "settings": {}
+        },
+        "instagram_post_x9nLYN": {
+          "type": "instagram_post",
+          "settings": {}
+        },
+        "instagram_post_xKardn": {
+          "type": "instagram_post",
+          "settings": {}
+        }
+      },
+      "block_order": [
+        "instagram_post_ApB8KE",
+        "instagram_post_dVRPpC",
+        "instagram_post_hPLFAK",
+        "instagram_post_pmLhD7",
+        "instagram_post_x9nLYN",
+        "instagram_post_xKardn"
+      ],
+      "name": "Small Instagram Grid",
+      "settings": {
+        "title": "Latest from Swear Media"
+      }
+    },
     "grid": {
       "type": "featured-grid",
       "blocks": {
@@ -63,6 +106,7 @@
   },
   "order": [
     "hero",
+    "instagram_embed_qXHXKa",
     "grid",
     "trend"
   ]
