@@ -9,27 +9,27 @@
   {% endif %}
 
   {% if section.blocks.size > 0 %}
-    <div class="instagram-grid">
+    <div class="relative">
+      <div class="instagram-grid">
 
-      {% for block in section.blocks %}
-        <div class="instagram-post-item" {{ block.shopify_attributes }}>
-          <a href="{{ block.settings.post_url }}" target="_blank" rel="noopener noreferrer" class="block">
+        {% for block in section.blocks %}
+          <div class="instagram-post-item" {{ block.shopify_attributes }}>
             {% if block.settings.video != blank %}
               <video
                 src="{{ block.settings.video.sources[0].url }}"
-                poster="{{ block.settings.video_placeholder_image | img_url: 'medium' }}"
                 playsinline
                 class="w-full h-full object-cover"
               ></video>
-            {% elsif block.settings.image != blank %}
-              <img src="{{ block.settings.image | img_url: 'medium' }}" alt="{{ block.settings.image.alt | escape }}" class="w-full h-full object-cover">
-            {% else %}
-              <div class="bg-gray-200 w-full" style="padding-top: 100%;"></div>
             {% endif %}
-          </a>
-        </div>
-      {% endfor %}
+          </div>
+        {% endfor %}
 
+      </div>
+      <button class="absolute top-1/2 right-0 transform -translate-y-1/2 bg-white bg-opacity-50 rounded-full p-2 text-black next-video-btn">
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M9 5l7 7-7 7" />
+        </svg>
+      </button>
     </div>
   {% else %}
     <div class="text-center">
@@ -39,6 +39,10 @@
 </div>
 
 <style>
+  .section-instagram-grid .relative {
+    position: relative;
+  }
+
   .section-instagram-grid .instagram-grid {
     display: flex;
     gap: 10px;
@@ -47,42 +51,44 @@
     -webkit-overflow-scrolling: touch;
     scroll-snap-type: x mandatory;
     padding-bottom: 1rem;
+    height: 70vh; /* Set a fixed height for vertical videos */
   }
 
   .section-instagram-grid .instagram-post-item {
-    flex: 0 0 100%;
+    flex: 0 0 auto; /* Let the width be determined by video's aspect ratio */
     scroll-snap-align: start;
     position: relative;
-    overflow: hidden;
-  }
-  
-  .section-instagram-grid .instagram-post-item a {
-    display: block;
-    width: 100%;
-    /* Maintain aspect ratio */
-    padding-top: 100%; /* For square images */
-    position: relative;
+    height: 100%;
   }
 
-  .section-instagram-grid .instagram-post-item img {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
+  .section-instagram-grid .instagram-post-item video {
     height: 100%;
-    object-fit: cover; /* Maintain aspect ratio and cover the area */
+    width: auto;
+    object-fit: cover;
+  }
+
+  .next-video-btn {
+    right: 1rem;
+    z-index: 10;
   }
 </style>
 
 <script>
   document.addEventListener('DOMContentLoaded', () => {
     const section = document.querySelector('[data-section-id="{{ section.id }}"]');
+    if (!section) return;
+
     const grid = section.querySelector('.instagram-grid');
+    const postItems = section.querySelectorAll('.instagram-post-item');
     const videos = section.querySelectorAll('video');
+    const nextButton = section.querySelector('.next-video-btn');
 
-    if (videos.length === 0) return;
+    if (postItems.length === 0) return;
 
-    const observer = new IntersectionObserver((entries) => {
+    let currentIndex = 0;
+
+    // --- Video playback on intersection ---
+    const videoObserver = new IntersectionObserver((entries) => {
       entries.forEach(entry => {
         const video = entry.target;
         if (entry.isIntersecting) {
@@ -94,12 +100,29 @@
       });
     }, { threshold: 0.5 });
 
-    videos.forEach((video, index) => {
-      observer.observe(video);
+    videos.forEach(video => {
+      videoObserver.observe(video);
+    });
 
-      video.addEventListener('ended', () => {
-        const nextIndex = (index + 1) % videos.length;
-        const nextPostItem = videos[nextIndex].closest('.instagram-post-item');
+    // --- Sync currentIndex on scroll ---
+    const postObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const intersectingItem = entry.target;
+                currentIndex = Array.from(postItems).indexOf(intersectingItem);
+            }
+        });
+    }, { root: grid, threshold: 0.5 });
+
+    postItems.forEach(item => {
+        postObserver.observe(item);
+    });
+
+    // --- Next button functionality ---
+    if (nextButton) {
+      nextButton.addEventListener('click', () => {
+        const nextIndex = (currentIndex + 1) % postItems.length;
+        const nextPostItem = postItems[nextIndex];
         if (nextPostItem) {
           grid.scrollTo({
             left: nextPostItem.offsetLeft,
@@ -107,7 +130,7 @@
           });
         }
       });
-    });
+    }
   });
 </script>
 
@@ -130,24 +153,9 @@
       "name": "Instagram Post",
       "settings": [
         {
-          "type": "image_picker",
-          "id": "image",
-          "label": "Image"
-        },
-        {
           "type": "video",
           "id": "video",
           "label": "Video"
-        },
-        {
-          "type": "image_picker",
-          "id": "video_placeholder_image",
-          "label": "Video Placeholder Image"
-        },
-        {
-          "type": "url",
-          "id": "post_url",
-          "label": "Post URL"
         }
       ]
     }
