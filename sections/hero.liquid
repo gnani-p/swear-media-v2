@@ -6,6 +6,39 @@
     .desktop-video { display: none; }
     .mobile-video { display: block; }
   }
+
+  /* Typing and Fade-in Animations */
+  .typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    border-right: .15em solid orange; /* The typewriter cursor */
+    animation: 
+      typing var(--typing-duration, 2s) steps(var(--char-count, 11)) forwards,
+      blink-caret .75s step-end infinite;
+    width: 0;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: orange; }
+  }
+
+  .fade-in-effect {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: var(--typing-duration, 2s);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
 </style>
 <div class="hero-wrapper relative" style="height: 90vh; overflow: hidden; display: flex; align-items: center; justify-content: center;">
   
@@ -33,9 +66,9 @@
 <!-- Main Content -->
   <div class="hero-content relative z-10 text-center container">
     <h1 class="font-stencil" style="font-size: clamp(3rem, 10vw, 7rem); line-height: 0.9;">
-      {{ section.settings.heading_line_1 }}<br>
+      <span class="typing-effect" style="--char-count: {{ section.settings.heading_line_1 | size }};">{{ section.settings.heading_line_1 }}</span><br>
 
-      <span class="text-accent" style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1;">
+      <span class="text-accent fade-in-effect" style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1;">
         {{ section.settings.heading_line_2 }}
       </span>
     </h1>
