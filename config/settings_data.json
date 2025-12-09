@@ -23,9 +23,8 @@
           "social_discord_link": ""
         }
       },
-      "brands-service-package": {
-        "type": "brands-service-package",
-        "settings": {
+      "services-package": {
+            "type": "services-package",        "settings": {
           "title": "Service Packages",
           "products_to_show": 3,
           "product_1": "starter-package",
