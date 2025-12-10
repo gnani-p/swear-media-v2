@@ -21,12 +21,12 @@
         "link_1_url": "https://swearmedia.com/collections/films",
         "link_2_text": "Services",
         "link_2_url": "https://swearmedia.com/pages/services",
-        "link_3_text": "CONTACT",
-        "link_3_url": "https://swearmedia.com/pages/contact",
+        "link_3_text": "🎱 x SM",
+        "link_3_url": "shopify://pages/laurens-vintage-🎱",
         "link_4_text": "PORTRAITS",
         "link_4_url": "https://swearmedia.com/pages/portraits",
-        "link_5_text": "🎱 x SM",
-        "link_5_url": "shopify://pages/laurens-vintage-🎱"
+        "link_5_text": "CONTACT",
+        "link_5_url": "shopify://pages/contact"
       }
     },
     "grid": {
