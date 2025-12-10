@@ -51,11 +51,33 @@
             "tag2": "COMING SOON",
             "link": "https://swearmedia.com/products/%D0%B4%D0%B5%D0%BC%D0%B0-copy"
           }
+        },
+        "card_Bj3RmK": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/588934955_18023478848785494_2530629015313865271_n.jpg",
+            "title": "Photography",
+            "tag1": "Portraits",
+            "tag2": "Modeling",
+            "link": "shopify://pages/portraits"
+          }
+        },
+        "card_aJd8xm": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/467116741_2902997463211638_1253227412625620046_n.jpg",
+            "title": "Videography",
+            "tag1": "CINEMA",
+            "tag2": "LOCAL COLLAB",
+            "link": "shopify://collections/films"
+          }
         }
       },
       "block_order": [
         "card_JKK3A9",
-        "card_qYNpD9"
+        "card_qYNpD9",
+        "card_Bj3RmK",
+        "card_aJd8xm"
       ],
       "settings": {
         "title": "Most Recent // Collaborations",
