@@ -1,0 +1,67 @@
+{% comment %}
+  Template: Lauren's Vintage (Product)
+  Role: Displays a single vintage clothing item.
+{% endcomment %}
+
+<div class="vintage-product-page bg-swear-white" style="padding: 4rem 0;">
+  <div class="container">
+    <div class="grid grid-cols-1 lg:grid-cols-2 gap-12">
+
+      <!-- 1. Product Image Gallery -->
+      <div class="product-gallery">
+        {% for media in product.media %}
+          <div class="gallery-image" style="margin-bottom: 1rem;">
+            <img src="{{ media | img_url: '1024x1024' }}" alt="{{ media.alt | escape }}" style="width: 100%; height: auto; border: 1px solid var(--swear-gray);">
+          </div>
+        {% endfor %}
+      </div>
+
+      <!-- 2. Product Details & Form -->
+      <div class="product-info">
+        <h1 class="font-stencil uppercase" style="font-size: 3rem; line-height: 1.1;">{{ product.title }}</h1>
+        
+        <div class="price font-mono text-2xl my-4">
+          {{ product.price | money }}
+        </div>
+        
+        <div class="description font-mono text-base leading-relaxed mb-6">
+          {{ product.description }}
+        </div>
+
+        {% comment %}
+          This is a basic product form. You might need to customize it
+          based on your product options (e.g., size, color).
+        {% endcomment %}
+        {% form 'product', product, class: 'product-form' %}
+          <input type="hidden" name="id" value="{{ product.selected_or_first_available_variant.id }}">
+          
+          <button type="submit" name="add" class="btn w-full">
+            Add to Cart
+          </button>
+        {% endform %}
+        
+        <div class="meta-details mt-8 border-t border-swear-gray pt-6">
+          <h3 class="font-stencil uppercase text-lg mb-4">Item Details</h3>
+          <ul class="font-mono text-sm space-y-3">
+            <li><strong>SKU:</strong> {{ product.selected_or_first_available_variant.sku | default: 'N/A' }}</li>
+            <li><strong>Tags:</strong> {{ product.tags | join: ', ' }}</li>
+            {% for block in section.blocks %}
+              {% if block.type == 'meta-field' %}
+                {% assign field_name = block.settings.field_name %}
+                <li><strong>{{ field_name | capitalize }}:</strong> {{ product.metafields.my_fields[field_name] }}</li>
+              {% endif %}
+            {% endfor %}
+          </ul>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</div>
+{% schema %}
+{
+  "name": "Lauren Vintage Product",
+  "settings": [],
+  "blocks": []
+}
+{% endschema %}
