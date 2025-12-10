@@ -71,13 +71,24 @@
             "tag2": "LOCAL COLLAB",
             "link": "shopify://collections/films"
           }
+        },
+        "card_p9WMMP": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/530762723_18235337308295868_7194240478995876975_n.jpg",
+            "title": "BRAND COLLABS",
+            "tag1": "Local businesses",
+            "tag2": "Services",
+            "link": ""
+          }
         }
       },
       "block_order": [
         "card_JKK3A9",
         "card_qYNpD9",
         "card_Bj3RmK",
-        "card_aJd8xm"
+        "card_aJd8xm",
+        "card_p9WMMP"
       ],
       "settings": {
         "title": "Most Recent // Collaborations",
