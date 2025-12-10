@@ -29,6 +29,39 @@
         "link_5_url": "shopify://pages/laurens-vintage-🎱"
       }
     },
+    "grid": {
+      "type": "featured-grid",
+      "blocks": {
+        "card_JKK3A9": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/541571791_18219698392306252_1882333727440493554_n.jpg",
+            "title": "Lauren's vintage",
+            "tag1": "Shop",
+            "tag2": "Thrifted Pieces",
+            "link": "shopify://pages/laurens-vintage-🎱"
+          }
+        },
+        "card_qYNpD9": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/900w-V71tGs0HuEw.webp",
+            "title": "дема",
+            "tag1": "Horror",
+            "tag2": "COMING SOON",
+            "link": "https://swearmedia.com/products/%D0%B4%D0%B5%D0%BC%D0%B0-copy"
+          }
+        }
+      },
+      "block_order": [
+        "card_JKK3A9",
+        "card_qYNpD9"
+      ],
+      "settings": {
+        "title": "Most Recent // Collaborations",
+        "view_all_link": ""
+      }
+    },
     "instagram_embed_qXHXKa": {
       "type": "instagram-embed",
       "blocks": {
@@ -72,39 +105,6 @@
         "title": "Latest from Swear Media"
       }
     },
-    "grid": {
-      "type": "featured-grid",
-      "blocks": {
-        "card_JKK3A9": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/541571791_18219698392306252_1882333727440493554_n.jpg",
-            "title": "Lauren's vintage",
-            "tag1": "Shop",
-            "tag2": "Thrifted Pieces",
-            "link": "shopify://pages/laurens-vintage-🎱"
-          }
-        },
-        "card_qYNpD9": {
-          "type": "card",
-          "settings": {
-            "image": "shopify://shop_images/900w-V71tGs0HuEw.webp",
-            "title": "дема",
-            "tag1": "Horror",
-            "tag2": "COMING SOON",
-            "link": "https://swearmedia.com/products/%D0%B4%D0%B5%D0%BC%D0%B0-copy"
-          }
-        }
-      },
-      "block_order": [
-        "card_JKK3A9",
-        "card_qYNpD9"
-      ],
-      "settings": {
-        "title": "Most Recent // Collaborations",
-        "view_all_link": ""
-      }
-    },
     "trend": {
       "type": "trend-report",
       "settings": {
@@ -118,8 +118,8 @@
   },
   "order": [
     "hero",
-    "instagram_embed_qXHXKa",
     "grid",
+    "instagram_embed_qXHXKa",
     "trend"
   ]
 }
