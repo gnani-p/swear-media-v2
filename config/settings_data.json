@@ -18,13 +18,12 @@
         "type": "footer",
         "settings": {
           "social_instagram_link": "https://instagram.com/swearmedia",
-          "social_youtube_link": "https://www.youtube.com/@SWEARmedia",
-          "social_tiktok_link": "",
-          "social_discord_link": ""
+          "social_youtube_link": "https://www.youtube.com/@SWEARmedia"
         }
       },
       "services-package": {
-            "type": "services-package",        "settings": {
+        "type": "services-package",
+        "settings": {
           "title": "Service Packages",
           "products_to_show": 3,
           "product_1": "starter-package",
@@ -46,9 +45,7 @@
         "blocks": {
           "instagram_post_3Hc4bB": {
             "type": "instagram_post",
-            "settings": {
-              "post_url": "https://www.instagram.com/p/DRVTK1xkkeP/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
-            }
+            "settings": {}
           }
         },
         "block_order": [
@@ -171,6 +168,38 @@
         "settings": {
           "title": "Portraits on Instagram"
         }
+      },
+      "brand-logos": {
+        "type": "brand-logos",
+        "blocks": {
+          "logo_RPqmPa": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/501494136_18280824454252864_5189579603501924945_n.jpg",
+              "link": ""
+            }
+          },
+          "logo_4EQARa": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/Untitled_Project_15.png",
+              "link": ""
+            }
+          },
+          "logo_7qUcbT": {
+            "type": "logo",
+            "settings": {
+              "image": "shopify://shop_images/Photoroom_20250918_133625.png",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "logo_RPqmPa",
+          "logo_4EQARa",
+          "logo_7qUcbT"
+        ],
+        "settings": {}
       }
     },
     "content_for_index": []
