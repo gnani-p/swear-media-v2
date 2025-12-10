@@ -112,7 +112,9 @@
         },
         "instagram_post_pmLhD7": {
           "type": "instagram_post",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/btsshrots.mp4"
+          }
         },
         "instagram_post_x9nLYN": {
           "type": "instagram_post",
