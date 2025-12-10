@@ -114,12 +114,40 @@
         "body_text": "The scene is heating up near the Short North. Last weekend's pop-up was a flashpoint for emerging graphic designers, focusing on anti-corporate stencil work and decentralized art distribution. We acquired new assets documenting the event.",
         "link": "https://youtu.be/9YFA9Q5Oxaw?si=OgKcIS8DWGf0f86E"
       }
+    },
+    "brand_logos_PLnmf4": {
+      "type": "brand-logos",
+      "blocks": {
+        "logo_fAmmCG": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Untitled_Project_15.png",
+            "link": ""
+          }
+        },
+        "logo_wkyLT7": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/Photoroom_20250918_133625.png",
+            "link": ""
+          }
+        }
+      },
+      "block_order": [
+        "logo_fAmmCG",
+        "logo_wkyLT7"
+      ],
+      "name": "Brand Logos",
+      "settings": {
+        "title": "Our Partners"
+      }
     }
   },
   "order": [
     "hero",
     "grid",
     "instagram_embed_qXHXKa",
-    "trend"
+    "trend",
+    "brand_logos_PLnmf4"
   ]
 }
