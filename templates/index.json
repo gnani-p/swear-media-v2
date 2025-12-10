@@ -118,6 +118,13 @@
     "brand_logos_PLnmf4": {
       "type": "brand-logos",
       "blocks": {
+        "logo_XCTaWx": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/501494136_18280824454252864_5189579603501924945_n.jpg",
+            "link": ""
+          }
+        },
         "logo_fAmmCG": {
           "type": "logo",
           "settings": {
@@ -134,6 +141,7 @@
         }
       },
       "block_order": [
+        "logo_XCTaWx",
         "logo_fAmmCG",
         "logo_wkyLT7"
       ],
