@@ -171,34 +171,6 @@
       },
       "brand-logos": {
         "type": "brand-logos",
-        "blocks": {
-          "logo_RPqmPa": {
-            "type": "logo",
-            "settings": {
-              "image": "shopify://shop_images/501494136_18280824454252864_5189579603501924945_n.jpg",
-              "link": ""
-            }
-          },
-          "logo_4EQARa": {
-            "type": "logo",
-            "settings": {
-              "image": "shopify://shop_images/Untitled_Project_15.png",
-              "link": ""
-            }
-          },
-          "logo_7qUcbT": {
-            "type": "logo",
-            "settings": {
-              "image": "shopify://shop_images/Photoroom_20250918_133625.png",
-              "link": ""
-            }
-          }
-        },
-        "block_order": [
-          "logo_RPqmPa",
-          "logo_4EQARa",
-          "logo_7qUcbT"
-        ],
         "settings": {}
       }
     },
