@@ -92,7 +92,7 @@
       ],
       "settings": {
         "title": "Most Recent // Collaborations",
-        "view_all_link": ""
+        "view_all_link": "shopify://pages/services"
       }
     },
     "instagram_embed_qXHXKa": {
@@ -104,13 +104,11 @@
             "video": "shopify://files/videos/AQOJfywcLFz-vyVs6DQIJJ7VjEBrPByliup3NukOG5N2LawZS_ZQWnn2GU81JRX8KflSJWMoZTdcCDfd1UQuC-plL3w9SiEpeyHgMMQ.mp4"
           }
         },
-        "instagram_post_dVRPpC": {
-          "type": "instagram_post",
-          "settings": {}
-        },
         "instagram_post_hPLFAK": {
           "type": "instagram_post",
-          "settings": {}
+          "settings": {
+            "video": "shopify://files/videos/AQNJ4I5GpDXwVBz8CN2VQEK40ExgLGmSDdDHkUenOMjYMUGPtcmdy_J-KwSVbLzWJZS8jmd2h6sw6mG7K4SGHQ5IGXh6An7-5gUjkIE.mp4"
+          }
         },
         "instagram_post_pmLhD7": {
           "type": "instagram_post",
@@ -127,7 +125,6 @@
       },
       "block_order": [
         "instagram_post_ApB8KE",
-        "instagram_post_dVRPpC",
         "instagram_post_hPLFAK",
         "instagram_post_pmLhD7",
         "instagram_post_x9nLYN",
@@ -155,7 +152,7 @@
           "type": "logo",
           "settings": {
             "image": "shopify://shop_images/501494136_18280824454252864_5189579603501924945_n.jpg",
-            "link": ""
+            "link": "https://www.instagram.com/svintxclaire/"
           }
         },
         "logo_fAmmCG": {
