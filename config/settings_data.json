@@ -172,6 +172,14 @@
       "brand-logos": {
         "type": "brand-logos",
         "settings": {}
+      },
+      "lauren-vintage": {
+        "type": "lauren-vintage",
+        "settings": {
+          "title": "Lauren's Vintage",
+          "content": "<p>Welcome to Lauren's Vintage. This is a collection of hand-picked vintage items.</p>",
+          "collection": "shop"
+        }
       }
     },
     "content_for_index": []
