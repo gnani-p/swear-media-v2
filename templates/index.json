@@ -122,14 +122,14 @@
           "type": "logo",
           "settings": {
             "image": "shopify://shop_images/Untitled_Project_15.png",
-            "link": ""
+            "link": "https://hammockgear.com/"
           }
         },
         "logo_wkyLT7": {
           "type": "logo",
           "settings": {
             "image": "shopify://shop_images/Photoroom_20250918_133625.png",
-            "link": ""
+            "link": "shopify://pages/laurens-vintage-🎱"
           }
         }
       },
@@ -138,9 +138,7 @@
         "logo_wkyLT7"
       ],
       "name": "Brand Logos",
-      "settings": {
-        "title": "Our Partners"
-      }
+      "settings": {}
     }
   },
   "order": [
