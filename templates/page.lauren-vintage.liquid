@@ -1,1 +1,22 @@
-{% section 'lauren-vintage' %}
+{% comment %}
+  Template for the Lauren's Vintage page.
+{% endcomment %}
+<div class="page-container container" style="padding-top: 6rem; padding-bottom: 6rem;">
+  
+  <header class="page-header" style="border-bottom: 2px solid var(--swear-white); padding-bottom: 1rem; margin-bottom: 3rem;">
+    <h1 class="font-stencil uppercase" style="font-size: 4rem;">Lauren's Vintage</h1>
+  </header>
+
+  <div class="page-content font-mono" style="font-size: 1.125rem; line-height: 1.6;">
+    <p>Welcome to Lauren's Vintage. This is a collection of hand-picked vintage items.</p>
+    
+    <div class="vintage-collection" style="margin-top: 4rem;">
+      {% comment %}
+        This will render a collection of products with the 'lauren-vintage' tag.
+        You will need to create a new collection in your Shopify admin with the handle 'lauren-vintage'.
+      {% endcomment %}
+      {% render 'collection', collection: collections.lauren-vintage %}
+    </div>
+  </div>
+  
+</div>
