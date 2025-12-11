@@ -118,9 +118,7 @@
             font-size: 24px;
         }
 
-        .slider-button.prev {
-            left: 10px;
-        }
+
 
         .slider-button.next {
             right: 10px;
@@ -192,7 +190,6 @@
   </div>
 
   {% if section.blocks.size > 1 %}
-    <button class="slider-button prev">&lt;</button>
     <button class="slider-button next">&gt;</button>
   {% endif %}
 </div>
@@ -228,7 +225,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const totalSlides = slides.length;
     if (totalSlides <= 1) return;
 
-    const prevButton = document.querySelector('.slider-button.prev');
     const nextButton = document.querySelector('.slider-button.next');
     let currentIndex = 0;
     let startX = 0;
@@ -245,9 +241,7 @@ document.addEventListener('DOMContentLoaded', function() {
         currentIndex = index;
     }
 
-    prevButton.addEventListener('click', () => {
-        goToSlide(currentIndex - 1);
-    });
+
 
     nextButton.addEventListener('click', () => {
         goToSlide(currentIndex + 1);
