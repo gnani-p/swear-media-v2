@@ -22,9 +22,9 @@
 <div class="collection-page container" style="padding-top: 6rem; padding-bottom: 6rem;">
   
   <header class="page-header" style="border-bottom: 2px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 3rem;">
-    <h1 style="font-size: 4rem;">{{ collection.title }}</h1>
-    {% if collection.description != blank %}
-      <p style="margin-top: 1rem;">{{ collection.description }}</p>
+    <h1 style="font-size: 4rem;">{{ section.settings.title }}</h1>
+    {% if section.settings.description != blank %}
+      <p style="margin-top: 1rem;">{{ section.settings.description }}</p>
     {% endif %}
   </header>
 
