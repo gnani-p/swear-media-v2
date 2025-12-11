@@ -1,0 +1,95 @@
+{% comment %}
+  Shop Template: Based on Lauren's Vintage
+{% endcomment %}
+
+<div class="collection-page container" style="padding-top: 6rem; padding-bottom: 6rem;">
+  
+  <header class="page-header" style="border-bottom: 2px solid var(--swear-white); padding-bottom: 1rem; margin-bottom: 3rem;">
+    <h1 class="font-stencil uppercase" style="font-size: 4rem;">{{ collection.title }}</h1>
+    {% if collection.description != blank %}
+      <p class="font-mono" style="margin-top: 1rem; color: var(--swear-concrete);">{{ collection.description }}</p>
+    {% endif %}
+  </header>
+
+  <div class="collection-controls" style="margin-bottom: 2rem; display: flex; justify-content: space-between; align-items: center;">
+    <div class="filters">
+      <!-- Placeholder for filters -->
+      <button class="filter-button">Filter by</button>
+    </div>
+    <div class="sorting">
+      <!-- Placeholder for sorting -->
+      <select name="sort_by" id="sort_by" class="sort-by-select">
+        <option value="manual">Featured</option>
+        <option value="best-selling">Best selling</option>
+        <option value="title-ascending">Alphabetically, A-Z</option>
+        <option value="title-descending">Alphabetically, Z-A</option>
+        <option value="price-ascending">Price, low to high</option>
+        <option value="price-descending">Price, high to low</option>
+        <option value="created-ascending">Date, old to new</option>
+        <option value="created-descending">Date, new to old</option>
+      </select>
+    </div>
+  </div>
+
+  <div class="collection-products grid-container">
+    {% for product in collection.products %}
+      <a href="{{ product.url }}" class="glitch-card block bg-swear-black border border-swear-gray group relative" style="border: 1px solid var(--swear-gray);">
+        <div class="card-image-wrapper relative overflow-hidden">
+          {% render 'product-card-image', product: product %}
+        </div>
+        
+        <div class="card-content" style="padding: 1rem; border-top: 1px solid var(--swear-gray);">
+          <h3 class="font-stencil text-xl group-hover:text-accent" style="font-size: 1.25rem; color: var(--swear-white);">{{ product.title }}</h3>
+          <p class="font-mono text-concrete" style="margin-top: 0.5rem; color: var(--swear-concrete);">
+            {{ product.price | money }}
+          </p>
+        </div>
+      </a>
+    {% else %}
+      <p class="font-mono">No products found in this collection.</p>
+    {% endfor %}
+  </div>
+
+</div>
+
+<style>
+  .grid-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 2rem;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Shop Collection",
+  "settings": [
+    {
+      "type": "text",
+      "id": "title",
+      "label": "Title",
+      "default": "Shop"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>Welcome to the shop.</p>"
+    }
+  ]
+}
+{% endschema %}
+
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const sortSelect = document.getElementById('sort_by');
+    if (sortSelect) {
+      sortSelect.addEventListener('change', function(e) {
+        const value = e.target.value;
+        const url = new URL(window.location.href);
+        url.searchParams.set('sort_by', value);
+        window.location = url.toString();
+      });
+    }
+  });
+</script>
