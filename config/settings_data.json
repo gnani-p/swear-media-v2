@@ -175,9 +175,18 @@
       },
       "lauren-vintage-hero": {
         "type": "lauren-vintage-hero",
-        "settings": {
-          "hero_image": "shopify://shop_images/Screenshot_20251210_194353_Samsung_Internet.jpg"
-        }
+        "blocks": {
+          "image_cVjtm8": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Screenshot_20251210_194353_Samsung_Internet.jpg"
+            }
+          }
+        },
+        "block_order": [
+          "image_cVjtm8"
+        ],
+        "settings": {}
       }
     },
     "content_for_index": []
