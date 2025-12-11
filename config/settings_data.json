@@ -173,12 +173,10 @@
         "type": "brand-logos",
         "settings": {}
       },
-      "lauren-vintage": {
-        "type": "lauren-vintage",
+      "lauren-vintage-hero": {
+        "type": "lauren-vintage-hero",
         "settings": {
-          "title": "Lauren's Vintage",
-          "content": "<p>Welcome to Lauren's Vintage. This is a collection of hand-picked vintage items.</p>",
-          "collection": "shop"
+          "hero_image": "shopify://shop_images/Screenshot_20251210_194353_Samsung_Internet.jpg"
         }
       }
     },
