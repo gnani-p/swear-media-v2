@@ -1,10 +1,33 @@
-{% comment %} Displays the product image with the grayscale effect {% endcomment %}
-{% if product.featured_image %}
-    <img 
-        src="{{ product.featured_image | img_url: '800x' }}" 
-        alt="{{ product.featured_image.alt | escape }}" 
+{% comment %} Displays the product image or video with the grayscale effect {% endcomment %}
+{%- assign featured_media = product.featured_media -%}
+{% if featured_media %}
+  {% case featured_media.media_type %}
+    {% when 'image' %}
+      <img
+        src="{{ featured_media | img_url: '800x' }}"
+        alt="{{ featured_media.alt | escape }}"
         class="card-image w-full h-auto object-cover"
-    />
+      />
+    {% when 'video' %}
+      <video
+        autoplay
+        loop
+        muted
+        playsinline
+        src="{{ featured_media.sources[1].url }}"
+        class="card-image w-full h-auto object-cover"
+      ></video>
+    {% when 'external_video' %}
+      <div class="card-image w-full h-auto object-cover">
+        {{ featured_media | external_video_tag }}
+      </div>
+    {% else %}
+      <img
+        src="{{ featured_media | img_url: '800x' }}"
+        alt="{{ featured_media.alt | escape }}"
+        class="card-image w-full h-auto object-cover"
+      />
+  {% endcase %}
 {% else %}
-    <div class="card-image" style="width: 100%; height: 250px; background: #222;"></div>
+  <div class="card-image" style="width: 100%; height: 250px; background: #222;"></div>
 {% endif %}

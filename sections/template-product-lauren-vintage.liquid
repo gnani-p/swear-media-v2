@@ -11,7 +11,20 @@
       <div class="product-gallery">
         {% for media in product.media %}
           <div class="gallery-image" style="margin-bottom: 1rem;">
-            <img src="{{ media | img_url: '1024x1024' }}" alt="{{ media.alt | escape }}" style="width: 100%; height: auto; border: 1px solid var(--swear-gray);">
+            {% case media.media_type %}
+              {% when 'image' %}
+                <img src="{{ media | img_url: '1024x1024' }}" alt="{{ media.alt | escape }}" style="width: 100%; height: auto; border: 1px solid var(--swear-gray);">
+              {% when 'video' %}
+                <video autoplay loop muted playsinline controls style="width: 100%; height: auto; border: 1px solid var(--swear-gray);">
+                  <source src="{{ media.sources[1].url }}" type="{{ media.sources[1].mime_type }}">
+                </video>
+              {% when 'external_video' %}
+                <div style="width: 100%; height: auto; border: 1px solid var(--swear-gray);">
+                  {{ media | external_video_tag }}
+                </div>
+              {% else %}
+                <img src="{{ media | img_url: '1024x1024' }}" alt="{{ media.alt | escape }}" style="width: 100%; height: auto; border: 1px solid var(--swear-gray);">
+            {% endcase %}
           </div>
         {% endfor %}
       </div>
