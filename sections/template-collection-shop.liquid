@@ -1,13 +1,30 @@
-{% comment %}
-  Shop Template: Based on Lauren's Vintage
-{% endcomment %}
+<link href="{{ 'lauren-vintage-base.css' | asset_url }}" rel="stylesheet">
+
+<header class="main-header">
+<div class="logo">
+<a href="https://swearmedia.com/pages/laurens-vintage-%F0%9F%8E%B1">
+<img src="https://cdn.shopify.com/s/files/1/0597/6509/6512/files/Photoroom_20250903_120625.png?v=1765416808" alt="Lauren's Vintage Logo" class="logo-image">
+</a>
+<a href="https://swearmedia.com/pages/laurens-vintage-%F0%9F%8E%B1">
+<h1>Lauren's Vintage</h1>
+</a>
+<a href="https://swearmedia.com" class="swear-media-link">x SWEAR MEDIA</a>
+</div>
+<nav class="main-nav">
+<ul>
+<li><a href="https://swearmedia.com/pages/shop">New Arrivals</a></li>
+<li><a href="https://swearmedia.com/pages/shop">Shop</a></li>
+<li><a href="#">Story</a></li>
+<li><a href="#">Contact</a></li>
+</ul>
+</nav></header>
 
 <div class="collection-page container" style="padding-top: 6rem; padding-bottom: 6rem;">
   
-  <header class="page-header" style="border-bottom: 2px solid var(--swear-white); padding-bottom: 1rem; margin-bottom: 3rem;">
-    <h1 class="font-stencil uppercase" style="font-size: 4rem;">{{ collection.title }}</h1>
+  <header class="page-header" style="border-bottom: 2px solid var(--border-color); padding-bottom: 1rem; margin-bottom: 3rem;">
+    <h1 style="font-size: 4rem;">{{ collection.title }}</h1>
     {% if collection.description != blank %}
-      <p class="font-mono" style="margin-top: 1rem; color: var(--swear-concrete);">{{ collection.description }}</p>
+      <p style="margin-top: 1rem;">{{ collection.description }}</p>
     {% endif %}
   </header>
 
@@ -33,32 +50,26 @@
 
   <div class="collection-products grid-container">
     {% for product in collection.products %}
-      <a href="{{ product.url }}" class="glitch-card block bg-swear-black border border-swear-gray group relative" style="border: 1px solid var(--swear-gray);">
+      <a href="{{ product.url }}" class="glitch-card block group relative" style="border: 1px solid var(--border-color); background-color: white;">
         <div class="card-image-wrapper relative overflow-hidden">
           {% render 'product-card-image', product: product %}
         </div>
         
-        <div class="card-content" style="padding: 1rem; border-top: 1px solid var(--swear-gray);">
-          <h3 class="font-stencil text-xl group-hover:text-accent" style="font-size: 1.25rem; color: var(--swear-white);">{{ product.title }}</h3>
-          <p class="font-mono text-concrete" style="margin-top: 0.5rem; color: var(--swear-concrete);">
+        <div class="card-content" style="padding: 1rem; border-top: 1px solid var(--border-color);">
+          <h3 class="text-xl group-hover:text-accent" style="font-size: 1.25rem; color: var(--text-color);">{{ product.title }}</h3>
+          <p style="margin-top: 0.5rem; color: var(--accent-color);">
             {{ product.price | money }}
           </p>
         </div>
       </a>
     {% else %}
-      <p class="font-mono">No products found in this collection.</p>
+      <p>No products found in this collection.</p>
     {% endfor %}
   </div>
 
 </div>
 
-<style>
-  .grid-container {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 2rem;
-  }
-</style>
+
 
 {% schema %}
 {
