@@ -58,7 +58,9 @@
     <!-- Global Film Grain Overlay -->
     <div class="film-grain"></div>
 
-    {% section 'header' %}
+    {% unless template.name == 'page.lauren-vintage' %}
+      {% section 'header' %}
+    {% endunless %}
 
     <main id="MainContent" class="content-for-layout" role="main" tabindex="-1">
       {{ content_for_layout }}
