@@ -187,11 +187,18 @@
             "settings": {
               "image": "shopify://shop_images/Screenshot_20251210_201308_Samsung_Internet.jpg"
             }
+          },
+          "image_9GRCQL": {
+            "type": "image",
+            "settings": {
+              "image": "shopify://shop_images/Screenshot_20251210_201353_Samsung_Internet.jpg"
+            }
           }
         },
         "block_order": [
           "image_cVjtm8",
-          "image_3Ldr4D"
+          "image_3Ldr4D",
+          "image_9GRCQL"
         ],
         "settings": {}
       }
