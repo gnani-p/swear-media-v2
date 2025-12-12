@@ -1,0 +1,131 @@
+{% comment %}
+  Cart Page Section
+  - Displays items in the cart
+  - Allows quantity changes
+  - Shows subtotal
+  - Provides a link to checkout
+{% endcomment %}
+
+<div class="page-container container" style="padding-top: 6rem; padding-bottom: 6rem;">
+
+  <header class="page-header" style="border-bottom: 2px solid var(--swear-white); padding-bottom: 1rem; margin-bottom: 3rem;">
+    <h1 class="font-stencil uppercase" style="font-size: 4rem;">{{ 'cart.general.title' | t }}</h1>
+  </header>
+
+  {% if cart.item_count > 0 %}
+    <form action="{{ routes.cart_url }}" method="post" novalidate class="cart-form">
+      <div class="cart-items-container">
+        {% for item in cart.items %}
+          <div class="cart-item" data-line="{{ forloop.index }}">
+            <div class="cart-item__image">
+              <a href="{{ item.url | within: collections.all }}">
+                <img src="{{ item | img_url: 'medium' }}" alt="{{ item.title | escape }}">
+              </a>
+            </div>
+            <div class="cart-item__details">
+              <div class="cart-item__title">
+                <a href="{{ item.url }}">
+                  {{ item.product.title }}
+                </a>
+              </div>
+              {% unless item.variant.title contains 'Default' %}
+                <div class="cart-item__variant">
+                  {{ item.variant.title }}
+                </div>
+              {% endunless %}
+              <div class="cart-item__price">
+                {{ item.price | money }}
+              </div>
+              <div class="cart-item__quantity">
+                <label for="updates_{{ item.key }}" class="visually-hidden">{{ 'cart.label.quantity' | t }}</label>
+                <input type="number" name="updates[]" id="updates_{{ item.key }}" value="{{ item.quantity }}" min="0" data-line="{{ forloop.index }}">
+              </div>
+              <div class="cart-item__remove">
+                <a href="{{ routes.cart_change_url }}?line={{ forloop.index }}&amp;quantity=0" class="cart-item__remove-link">{{ 'cart.general.remove' | t }}</a>
+              </div>
+              <div class="cart-item__line-price">
+                {{ item.line_price | money }}
+              </div>
+            </div>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="cart-footer">
+        <div class="cart-subtotal">
+          <span class="cart-subtotal__title">{{ 'cart.general.subtotal' | t }}</span>
+          <span class="cart-subtotal__price">{{ cart.total_price | money }}</span>
+        </div>
+        <div class="cart-checkout">
+          <button type="submit" name="checkout" class="btn btn--primary btn--full">
+            {{ 'cart.general.checkout' | t }}
+          </button>
+        </div>
+        <div class="cart-update">
+            <button type="submit" name="update" class="btn btn--secondary">
+                {{ 'cart.general.update' | t }}
+            </button>
+        </div>
+      </div>
+    </form>
+  {% else %}
+    <div class="cart-empty text-center">
+      <p>{{ 'cart.general.empty' | t }}</p>
+      <p><a href="{{ routes.all_products_collection_url }}" class="btn btn--primary">{{ 'general.404.link' | t }}</a></p>
+    </div>
+  {% endif %}
+
+</div>
+
+<style>
+  .cart-form {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
+  }
+  .cart-item {
+    display: flex;
+    gap: 2rem;
+    border-bottom: 1px solid #ccc;
+    padding-bottom: 2rem;
+  }
+  .cart-item__image {
+    flex-shrink: 0;
+  }
+  .cart-item__image img {
+    max-width: 150px;
+  }
+  .cart-item__details {
+    flex-grow: 1;
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+    gap: 1rem;
+    align-items: center;
+  }
+  .cart-item__title {
+    font-weight: bold;
+  }
+  .cart-footer {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 2rem;
+  }
+  .cart-subtotal {
+    text-align: right;
+  }
+  .cart-checkout {
+    text-align: right;
+  }
+  .cart-update {
+      text-align: right;
+  }
+</style>
+
+{% schema %}
+{
+  "name": "Cart",
+  "settings": []
+}
+{% endschema %}

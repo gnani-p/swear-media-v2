@@ -1,1 +1,22 @@
-{"general":{"404":{"title":"ur mom","subtext":"The page you were looking for does not exist."}}}
+{
+  "general": {
+    "404": {
+      "title": "ur mom",
+      "subtext": "The page you were looking for does not exist.",
+      "link": "Continue shopping"
+    }
+  },
+  "cart": {
+    "general": {
+      "title": "Your Cart",
+      "subtotal": "Subtotal",
+      "checkout": "Checkout",
+      "update": "Update Cart",
+      "remove": "Remove",
+      "empty": "Your cart is empty."
+    },
+    "label": {
+      "quantity": "Quantity"
+    }
+  }
+}
