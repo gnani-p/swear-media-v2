@@ -61,18 +61,10 @@
     <h1 class="font-stencil" style="font-size: clamp(3rem, 10vw, 7rem); line-height: 0.9;">
       <span class="typing-effect" style="--char-count: {{ section.settings.heading_line_1 | size }};">{{ section.settings.heading_line_1 }}</span><br>
 
-      <span class="text-accent fade-in-effect" style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1;">
-        {{ section.settings.heading_line_2 }}
-      </span>
+      <span class="" style="--char-count: {{ section.settings.heading_line_2 | size }};">{{ section.settings.heading_line_2 }}</span>
     </h1>
 
-    <div class="hero-links flex justify-center flex-wrap gap-4" style="margin-top: 3rem;">
-      <a href="{{ section.settings.link_1_url }}" class="btn">{{ section.settings.link_1_text }}</a>
-      <a href="{{ section.settings.link_2_url }}" class="btn">{{ section.settings.link_2_text }}</a>
-      <a href="{{ section.settings.link_3_url }}" class="btn btn-primary">{{ section.settings.link_3_text }}</a>
-      <a href="{{ section.settings.link_4_url }}" class="btn">{{ section.settings.link_4_text }}</a>
-      <a href="{{ section.settings.link_5_url }}" class="btn">{{ section.settings.link_5_text }}</a>
-    </div>
+
   </div>
 
 
@@ -101,16 +93,6 @@
     { "type": "url", "id": "video_url", "label": "Background Video URL (MP4)" },
     { "type": "url", "id": "mobile_video_url", "label": "Mobile Background Video URL (MP4)" },
 
-    { "type": "text", "id": "link_1_text", "label": "Link 1 Text", "default": "Films" },
-    { "type": "url", "id": "link_1_url", "label": "Link 1 URL" },
-    { "type": "text", "id": "link_2_text", "label": "Link 2 Text", "default": "Streets" },
-    { "type": "url", "id": "link_2_url", "label": "Link 2 URL" },
-    { "type": "text", "id": "link_3_text", "label": "Link 3 Text (Primary)", "default": "Drops" },
-    { "type": "url", "id": "link_3_url", "label": "Link 3 URL" },
-    { "type": "text", "id": "link_4_text", "label": "Link 4 Text", "default": "About" },
-    { "type": "url", "id": "link_4_url", "label": "Link 4 URL" },
-    { "type": "text", "id": "link_5_text", "label": "Link 5 Text", "default": "Lauren's Vintage" },
-    { "type": "url", "id": "link_5_url", "label": "Link 5 URL" }
   ],
   "presets": [{ "name": "Hero Messiahheaven" }]
 }
