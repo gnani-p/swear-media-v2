@@ -222,6 +222,15 @@
           "image_afTpRH"
         ],
         "settings": {}
+      },
+      "hero-video-messiahheaven": {
+        "type": "hero-video-messiahheaven",
+        "settings": {
+          "heading_line_1": "MESSIAH",
+          "heading_line_2": "HEAVEN",
+          "video_url": "https://cdn.shopify.com/videos/c/o/v/40cd938038e14b5aae327cb32893cb66.mp4",
+          "mobile_video_url": ""
+        }
       }
     },
     "content_for_index": []
