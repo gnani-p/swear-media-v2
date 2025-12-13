@@ -1,0 +1,126 @@
+<style>
+  .desktop-video { display: block; }
+  .mobile-video { display: none; }
+
+  @media (max-width: 768px) {
+    .desktop-video { display: none; }
+    .mobile-video { display: block; }
+  }
+
+  /* Typing and Fade-in Animations */
+  .typing-effect {
+    display: inline-block;
+    overflow: hidden;
+    white-space: nowrap;
+    animation: 
+      typing var(--typing-duration, 1s) steps(var(--char-count, 11)) forwards;
+    width: 0;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% }
+  }
+
+  .fade-in-effect {
+    opacity: 0;
+    animation: fadeIn 2s ease-in-out forwards;
+    animation-delay: var(--typing-duration, 1s);
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+</style>
+<div class="hero-wrapper relative" style="height: 90vh; overflow: hidden; display: flex; align-items: center; justify-content: center;">
+  
+  <!-- Background Video -->
+  <div class="hero-bg absolute inset-0" style="z-index: 0; opacity: 0.4;">
+    {% if section.settings.video_url != blank %}
+      <video autoplay muted loop playsinline class="w-full h-full object-cover desktop-video">
+        <source src="{{ section.settings.video_url }}" type="video/mp4">
+      </video>
+    {% endif %}
+    {% if section.settings.mobile_video_url != blank %}
+      <video autoplay muted loop playsinline class="w-full h-full object-cover mobile-video">
+        <source src="{{ section.settings.mobile_video_url }}" type="video/mp4">
+      </video>
+    {% endif %}
+    {% if section.settings.video_url == blank and section.settings.mobile_video_url == blank %}
+      <div style="width: 100%; height: 100%; background: #222; display: flex; align-items: center; justify-content: center;">
+        <span class="font-mono" style="color: #666;">UPLOAD VIDEO IN THEME EDITOR</span>
+      </div>
+    {% endif %}
+    <!-- Gradient Overlay -->
+    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(17,17,17,0.9), rgba(17,17,17,0.2));"></div>
+  </div>
+
+<!-- Main Content -->
+  <div class="hero-content relative z-10 text-center container">
+    <h1 class="font-stencil" style="font-size: clamp(3rem, 10vw, 7rem); line-height: 0.9;">
+      <span class="typing-effect" style="--char-count: {{ section.settings.heading_line_1 | size }};">{{ section.settings.heading_line_1 }}</span><br>
+
+      <span class="text-accent fade-in-effect" style="font-size: clamp(2rem, 4vw, 3rem); line-height: 1;">
+        {{ section.settings.heading_line_2 }}
+      </span>
+    </h1>
+
+    <div class="hero-links flex justify-center flex-wrap gap-4" style="margin-top: 3rem;">
+      <a href="{{ section.settings.link_1_url }}" class="btn">{{ section.settings.link_1_text }}</a>
+      <a href="{{ section.settings.link_2_url }}" class="btn">{{ section.settings.link_2_text }}</a>
+      <a href="{{ section.settings.link_3_url }}" class="btn btn-primary">{{ section.settings.link_3_text }}</a>
+      <a href="{{ section.settings.link_4_url }}" class="btn">{{ section.settings.link_4_text }}</a>
+      <a href="{{ section.settings.link_5_url }}" class="btn">{{ section.settings.link_5_text }}</a>
+    </div>
+  </div>
+
+  <!-- Scrolling Marquee -->
+  <div class="marquee-track absolute" style="bottom: 0; left: 0; right: 0; z-index: 20;">
+    <div class="marquee-content">
+      {% for i in (1..10) %}
+        <span class="font-stencil uppercase" style="padding: 0 1rem; letter-spacing: 2px; font-weight: 700;">
+          // {{ section.settings.marquee_text }}
+        </span>
+      {% endfor %}
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      var desktopVideo = document.querySelector('.desktop-video');
+      var mobileVideo = document.querySelector('.mobile-video');
+
+      if (desktopVideo) {
+        desktopVideo.playbackRate = 1.0;
+      }
+      if (mobileVideo) {
+        mobileVideo.playbackRate = 1.75;
+      }
+    });
+  </script>
+</div>
+
+{% schema %}
+{
+  "name": "Hero Messiahheaven",
+  "settings": [
+    { "type": "text", "id": "heading_line_1", "label": "Heading Line 1", "default": "MESSIAH" },
+    { "type": "text", "id": "heading_line_2", "label": "Heading Line 2", "default": "HEAVEN" },
+    { "type": "url", "id": "video_url", "label": "Background Video URL (MP4)" },
+    { "type": "url", "id": "mobile_video_url", "label": "Mobile Background Video URL (MP4)" },
+    { "type": "text", "id": "marquee_text", "label": "Marquee Text", "default": "AI REGULATION // COLUMBUS SKATE SCENE // E-WASTE CYCLE" },
+    { "type": "text", "id": "link_1_text", "label": "Link 1 Text", "default": "Films" },
+    { "type": "url", "id": "link_1_url", "label": "Link 1 URL" },
+    { "type": "text", "id": "link_2_text", "label": "Link 2 Text", "default": "Streets" },
+    { "type": "url", "id": "link_2_url", "label": "Link 2 URL" },
+    { "type": "text", "id": "link_3_text", "label": "Link 3 Text (Primary)", "default": "Drops" },
+    { "type": "url", "id": "link_3_url", "label": "Link 3 URL" },
+    { "type": "text", "id": "link_4_text", "label": "Link 4 Text", "default": "About" },
+    { "type": "url", "id": "link_4_url", "label": "Link 4 URL" },
+    { "type": "text", "id": "link_5_text", "label": "Link 5 Text", "default": "Lauren's Vintage" },
+    { "type": "url", "id": "link_5_url", "label": "Link 5 URL" }
+  ],
+  "presets": [{ "name": "Hero Messiahheaven" }]
+}
+{% endschema %}
