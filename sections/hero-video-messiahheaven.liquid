@@ -36,7 +36,7 @@
 <div class="hero-wrapper relative" style="height: 90vh; overflow: hidden; display: flex; align-items: center; justify-content: center;">
   
   <!-- Background Video -->
-  <div class="hero-bg absolute inset-0" style="z-index: 0; opacity: 0.4;">
+  <div class="hero-bg absolute inset-0" style="z-index: 0;">
     {% if section.settings.video_url != blank %}
       <video autoplay muted loop playsinline class="w-full h-full object-cover desktop-video">
         <source src="{{ section.settings.video_url }}" type="video/mp4">
@@ -52,8 +52,7 @@
         <span class="font-mono" style="color: #666;">UPLOAD VIDEO IN THEME EDITOR</span>
       </div>
     {% endif %}
-    <!-- Gradient Overlay -->
-    <div class="absolute inset-0" style="background: linear-gradient(to top, rgba(17,17,17,0.9), rgba(17,17,17,0.2));"></div>
+
   </div>
 
 <!-- Main Content -->
