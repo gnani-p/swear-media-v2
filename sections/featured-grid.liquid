@@ -1,16 +1,18 @@
 <section class="container" style="padding: 4rem 20px;">
+{% if section.settings.show_title %}
   <h2 class="font-stencil uppercase" style="font-size: 3rem; border-bottom: 2px solid var(--swear-white); padding-bottom: 1rem; margin-bottom: 3rem;">
     {{ section.settings.title }}
   </h2>
+{% endif %}
 
   <div class="grid-container">
     {% for block in section.blocks %}
       <a href="{{ block.settings.link }}" class="glitch-card block bg-black border border-gray group relative" style="border: 1px solid var(--swear-gray);">
-        <div class="card-image-wrapper relative overflow-hidden">
+        <div class="card-image-wrapper relative overflow-hidden" style="padding-bottom: 100%; height: 0;">
           {% if block.settings.image != blank %}
-            <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" class="card-image w-full">
+            <img src="{{ block.settings.image | img_url: '800x' }}" alt="{{ block.settings.title }}" class="card-image w-full absolute inset-0 object-cover">
           {% else %}
-            <div class="card-image" style="width: 100%; height: 250px; background: #222;"></div>
+            <div class="card-image absolute inset-0" style="width: 100%; background: #222;"></div>
           {% endif %}
         </div>
         
@@ -22,11 +24,13 @@
     {% endfor %}
   </div>
 
+{% if section.settings.show_view_all_link %}
   <div class="text-center" style="margin-top: 3rem;">
     <a href="{{ section.settings.view_all_link }}" class="font-mono uppercase text-accent hover:text-white" style="font-size: 1.25rem;">
       View More →
     </a>
   </div>
+{% endif %}
 </section>
 
 <style>
@@ -42,7 +46,9 @@
   "name": "Featured Grid",
   "settings": [
     { "type": "text", "id": "title", "label": "Section Title", "default": "Most Recent // Documents" },
-    { "type": "url", "id": "view_all_link", "label": "View All Link" }
+    { "type": "url", "id": "view_all_link", "label": "View All Link" },
+    { "type": "checkbox", "id": "show_title", "label": "Show Section Title", "default": true },
+    { "type": "checkbox", "id": "show_view_all_link", "label": "Show 'View All' Link", "default": true }
   ],
   "blocks": [
     {
