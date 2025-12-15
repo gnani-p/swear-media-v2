@@ -37,8 +37,7 @@
           "settings": {
             "image": "shopify://shop_images/541571791_18219698392306252_1882333727440493554_n.jpg",
             "title": "Lauren's vintage",
-            "tag1": "Shop",
-            "tag2": "Thrifted Pieces",
+            "description": "The official shop for Lauren's Vintage",
             "link": "shopify://pages/laurens-vintage-🎱"
           }
         },
@@ -47,8 +46,7 @@
           "settings": {
             "image": "shopify://shop_images/900w-V71tGs0HuEw.webp",
             "title": "дема",
-            "tag1": "Horror",
-            "tag2": "COMING SOON",
+            "description": "Upcoming short horror flick starring actor, Syd \"Дема\" Tsib. Julio returns home after long night at work. He isn't the same after walking through those doors. COMING SOON",
             "link": "shopify://products/дема"
           }
         },
@@ -57,8 +55,7 @@
           "settings": {
             "image": "shopify://shop_images/588934955_18023478848785494_2530629015313865271_n.jpg",
             "title": "Photography",
-            "tag1": "Portraits",
-            "tag2": "Modeling",
+            "description": "Click here to view the gallery",
             "link": "shopify://pages/portraits"
           }
         },
@@ -67,8 +64,7 @@
           "settings": {
             "image": "shopify://shop_images/467116741_2902997463211638_1253227412625620046_n.jpg",
             "title": "Videography",
-            "tag1": "Films",
-            "tag2": "Cinema",
+            "description": "SWEAR Media was founded on the idea of capturing the raw-energy of the real world and expressing it through lights, cameras, and action.",
             "link": "shopify://collections/films"
           }
         },
@@ -77,8 +73,7 @@
           "settings": {
             "image": "shopify://shop_images/530762723_18235337308295868_7194240478995876975_n.jpg",
             "title": "BRAND COLLABS",
-            "tag1": "Services",
-            "tag2": "Local businesses",
+            "description": "Support our local Columbus Creatives",
             "link": "shopify://pages/services"
           }
         }
