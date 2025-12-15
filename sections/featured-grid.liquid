@@ -16,10 +16,7 @@
         
         <div class="card-content" style="padding: 1rem; border-top: 1px solid var(--swear-gray);">
           <h3 class="font-stencil text-xl group-hover:text-accent" style="font-size: 1.25rem; color: var(--swear-white);">{{ block.settings.title }}</h3>
-          <div class="tags flex gap-2 mt-2" style="margin-top: 0.5rem; display: flex; gap: 0.5rem;">
-            <span class="tag border border-concrete text-concrete" style="border: 1px solid var(--swear-concrete); color: var(--swear-concrete); padding: 2px 6px; font-size: 0.75rem; font-family: var(--font-mono);">#{{ block.settings.tag1 }}</span>
-            <span class="tag border border-concrete text-concrete" style="border: 1px solid var(--swear-concrete); color: var(--swear-concrete); padding: 2px 6px; font-size: 0.75rem; font-family: var(--font-mono);">#{{ block.settings.tag2 }}</span>
-          </div>
+          <p class="text-concrete" style="font-family: var(--font-mono); margin-top: 0.5rem;">{{ block.settings.description }}</p>
         </div>
       </a>
     {% endfor %}
@@ -54,8 +51,7 @@
       "settings": [
         { "type": "image_picker", "id": "image", "label": "Image" },
         { "type": "text", "id": "title", "label": "Title", "default": "Project Title" },
-        { "type": "text", "id": "tag1", "label": "Tag 1", "default": "MiniDoc" },
-        { "type": "text", "id": "tag2", "label": "Tag 2", "default": "Streets" },
+        { "type": "textarea", "id": "description", "label": "Description", "default": "A brief description of the project." },
         { "type": "url", "id": "link", "label": "Link" }
       ]
     }
