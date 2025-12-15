@@ -1,4 +1,12 @@
 <section class="container" style="padding: 4rem 20px;">
+  <h2 class="font-stencil uppercase" style="font-size: 3rem; border-bottom: 2px solid var(--swear-white); padding-bottom: 1rem; margin-bottom: 3rem;">
+    {{ section.settings.title }}
+  </h2>
+  {% if section.settings.description != blank %}
+    <div class="section-description rte" style="margin-bottom: 3rem;">
+      {{ section.settings.description }}
+    </div>
+  {% endif %}
 
 
   <div class="grid-container">
@@ -29,6 +37,12 @@
       "id": "title",
       "label": "Section Title",
       "default": "Service Packages"
+    },
+    {
+      "type": "richtext",
+      "id": "description",
+      "label": "Description",
+      "default": "<p>A brief description of our services.</p>"
     },
     {
       "type": "range",
