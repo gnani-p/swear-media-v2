@@ -13,7 +13,7 @@
   </style>
   <div class="container flex justify-between items-center" style="height: 64px;">
     <!-- Logo -->
-    <a href="/" class="logo font-stencil">
+    <a href="{% if template.suffix == 'messiahheaven' %}/pages/messiahheaven{% else %}/{% endif %}" class="logo font-stencil">
       {% if template.suffix == 'messiahheaven' %}
         <img src="https://cdn.shopify.com/s/files/1/0597/6509/6512/files/IMG_20251212_230335.png?v=1765598651" alt="MESSIAHHEAVEN" style="max-height: 50px;">
       {% else %}
