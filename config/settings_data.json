@@ -226,7 +226,7 @@
       "hero-video-messiahheaven": {
         "type": "hero-video-messiahheaven",
         "settings": {
-          "video_url": "https://cdn.shopify.com/videos/c/o/v/40cd938038e14b5aae327cb32893cb66.mp4",
+          "video_url": "https://cdn.shopify.com/videos/c/o/v/2b99d31daeee4394b2c9a83f577a58a6.mp4",
           "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/2b99d31daeee4394b2c9a83f577a58a6.mp4"
         }
       },
@@ -247,7 +247,7 @@
               "image": "shopify://shop_images/541571791_18219698392306252_1882333727440493554_n.jpg",
               "title": "Lauren's Vintage",
               "description": "",
-              "link": ""
+              "link": "shopify://pages/laurens-vintage-🎱"
             }
           }
         },
@@ -256,8 +256,10 @@
           "card_WjVjDc"
         ],
         "settings": {
-          "title": "Most Recent // Documents",
-          "view_all_link": ""
+          "title": "",
+          "view_all_link": "",
+          "show_title": true,
+          "show_view_all_link": false
         }
       }
     },
