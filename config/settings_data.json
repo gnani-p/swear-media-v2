@@ -57,6 +57,114 @@
       },
       "instagram-grid-portraits": {
         "type": "instagram-grid-portraits",
+        "blocks": {
+          "instagram_post_DC4mwM": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/588934955_18023478848785494_2530629015313865271_n.jpg",
+              "post_url": "https://www.instagram.com/p/DSBMBf3AOf3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_HgnyPr": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/503985348_18231063880295868_2214896820461888632_n.jpg",
+              "post_url": "https://www.instagram.com/p/DLiuTzlusAn/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_VnDr7G": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/531198872_18235311130295868_8146800130044926268_n.jpg",
+              "post_url": "https://www.instagram.com/p/DNPnuu6OhYH/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_7xcQg8": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/467116741_2902997463211638_1253227412625620046_n.jpg",
+              "post_url": "https://www.instagram.com/p/DCh4-NaOQWQ/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_8iBJ87": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/334797159_954851732358892_1351415999687995549_n.jpg",
+              "post_url": "https://www.instagram.com/p/CpjbEIxNWG3/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_PBcn3p": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/491442129_18223941985295868_2356895104681954957_n.jpg",
+              "post_url": "https://www.instagram.com/p/DIud9E7ux12/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_6eAkfQ": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/584063888_18248403568295868_5855697198898574391_n.jpg",
+              "post_url": "https://www.instagram.com/p/DRVTK1xkkeP/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_hFJGh8": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/565176836_18243541498295868_1857942861640042547_n.jpg",
+              "post_url": "https://www.instagram.com/p/DP4oxf_kiN-/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_X9rADU": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/572881035_18245207038295868_3484644614984339134_n.jpg",
+              "post_url": "https://www.instagram.com/p/DQVXwy0jXMc/?utm_source=ig_web_button_share_sheet&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_LRij79": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/562676013_18243307492295868_665506330453486417_n.jpg",
+              "post_url": "https://www.instagram.com/p/DPzKeLFkRmF/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_R6xfaG": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/487419410_18221924560295868_8987977367519819197_n.jpg",
+              "post_url": "https://www.instagram.com/p/DH3hGOwO3Zy/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_pPMQVP": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/530762723_18235337308295868_7194240478995876975_n.jpg",
+              "post_url": "https://www.instagram.com/p/DNRLfpjudXb/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_X9zCLQ": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/487184453_18221815411295868_9055958748163261360_n.jpg",
+              "post_url": "https://www.instagram.com/p/DH07mCZOZZY/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          }
+        },
+        "block_order": [
+          "instagram_post_DC4mwM",
+          "instagram_post_HgnyPr",
+          "instagram_post_VnDr7G",
+          "instagram_post_7xcQg8",
+          "instagram_post_8iBJ87",
+          "instagram_post_PBcn3p",
+          "instagram_post_6eAkfQ",
+          "instagram_post_hFJGh8",
+          "instagram_post_X9rADU",
+          "instagram_post_LRij79",
+          "instagram_post_R6xfaG",
+          "instagram_post_pPMQVP",
+          "instagram_post_X9zCLQ"
+        ],
         "settings": {
           "title": "Portraits on Instagram"
         }
@@ -118,8 +226,8 @@
       "hero-video-messiahheaven": {
         "type": "hero-video-messiahheaven",
         "settings": {
-          "video_url": "https://cdn.shopify.com/videos/c/o/v/2b99d31daeee4394b2c9a83f577a58a6.mp4",
-          "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/3de43da37b254404b058a44273bf1992.mp4"
+          "video_url": "https://cdn.shopify.com/videos/c/o/v/40cd938038e14b5aae327cb32893cb66.mp4",
+          "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/2b99d31daeee4394b2c9a83f577a58a6.mp4"
         }
       },
       "featured-grid": {
