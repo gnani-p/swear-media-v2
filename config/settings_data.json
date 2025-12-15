@@ -229,6 +229,36 @@
           "video_url": "https://cdn.shopify.com/videos/c/o/v/40cd938038e14b5aae327cb32893cb66.mp4",
           "mobile_video_url": "https://cdn.shopify.com/videos/c/o/v/2b99d31daeee4394b2c9a83f577a58a6.mp4"
         }
+      },
+      "featured-grid": {
+        "type": "featured-grid",
+        "blocks": {
+          "card_9HqJWG": {
+            "type": "card",
+            "settings": {
+              "title": "MESSIAHHEAVEN",
+              "description": "",
+              "link": "shopify://pages/messiahheaven"
+            }
+          },
+          "card_WjVjDc": {
+            "type": "card",
+            "settings": {
+              "image": "shopify://shop_images/541571791_18219698392306252_1882333727440493554_n.jpg",
+              "title": "Lauren's Vintage",
+              "description": "",
+              "link": ""
+            }
+          }
+        },
+        "block_order": [
+          "card_9HqJWG",
+          "card_WjVjDc"
+        ],
+        "settings": {
+          "title": "Most Recent // Documents",
+          "view_all_link": ""
+        }
       }
     },
     "content_for_index": []
