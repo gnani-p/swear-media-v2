@@ -256,8 +256,10 @@
           "card_WjVjDc"
         ],
         "settings": {
-          "title": "Most Recent // Documents",
-          "view_all_link": ""
+          "title": "",
+          "view_all_link": "",
+          "show_title": true,
+          "show_view_all_link": false
         }
       }
     },
