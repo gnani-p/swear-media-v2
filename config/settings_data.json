@@ -24,7 +24,8 @@
       "services-package": {
         "type": "services-package",
         "settings": {
-          "title": "Service Packages",
+          "title": "VIDEO & PHOTO PACKAGES",
+          "description": "<h2><strong>We make your brand’s story become something people </strong><em><strong>feel.</strong></em></h2><p>SWEAR Media builds visuals that move with intention. Crafted for brands who want presence, not noise. Every package is designed to be cost-efficient without ever feeling “budget,” giving you cinematic production and clean storytelling that elevates how your audience sees you.</p><p>High-demand slots mean availability is limited, but the brands who partner with us walk away with something deeper than content: they walk away with clarity, confidence, and visuals that actually <em>shift</em> how customers engage.</p>",
           "products_to_show": 3,
           "product_1": "starter-package",
           "product_2": "standard-package",
