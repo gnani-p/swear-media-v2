@@ -66,6 +66,11 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
 .nav-link:hover { color: var(--swear-white); text-decoration: underline; text-decoration-thickness: 2px; }
 
 /* --- Mobile Nav --- */
+.header-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
 .mobile-toggle {
   display: block;
   cursor: pointer;
@@ -92,6 +97,17 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
 .change .bar3 {
   -webkit-transform: rotate(45deg) translate(-5px, -6px);
   transform: rotate(45deg) translate(-5px, -6px);
+}
+
+@media (min-width: 768px) {
+  .desktop-nav {
+    display: flex;
+    gap: 20px; /* Add some spacing between links */
+    align-items: center; /* Align items vertically in desktop nav */
+  }
+  .header-actions {
+    display: none; /* Hide the entire header-actions div on desktop */
+  }
 }
 
 

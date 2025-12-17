@@ -42,16 +42,18 @@
       </a>
     </nav>
     
-    <!-- Mobile Toggle -->
-    <div class="mobile-toggle flex items-center" style="gap: 1rem;">
-      <div class="hamburger">
-        <div class="bar1"></div>
-        <div class="bar2"></div>
-        <div class="bar3"></div>
-      </div>
+    <!-- Mobile Toggle and Cart Icon Wrapper -->
+    <div class="header-actions flex items-center">
       <a href="/cart" class="cart-icon">
         <i class="fas fa-shopping-cart"></i>
       </a>
+      <div class="mobile-toggle flex items-center" style="gap: 1rem;">
+        <div class="hamburger">
+          <div class="bar1"></div>
+          <div class="bar2"></div>
+          <div class="bar3"></div>
+        </div>
+      </div>
     </div>
   </div>
 </header>
@@ -60,7 +62,7 @@
 
 <script>
   document.querySelector('.hamburger').addEventListener('click', function() {
-    this.parentElement.classList.toggle('change');
+    document.querySelector('.mobile-toggle').classList.toggle('change');
     document.getElementById('side-menu').classList.toggle('open');
   });
 
