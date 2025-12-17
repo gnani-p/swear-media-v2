@@ -87,7 +87,9 @@
       ],
       "settings": {
         "title": "Most Recent // Collaborations",
-        "view_all_link": "shopify://pages/services"
+        "view_all_link": "shopify://pages/services",
+        "show_title": true,
+        "show_view_all_link": true
       }
     },
     "instagram_embed_qXHXKa": {
@@ -145,6 +147,13 @@
     "brand_logos_PLnmf4": {
       "type": "brand-logos",
       "blocks": {
+        "logo_UTwzKm": {
+          "type": "logo",
+          "settings": {
+            "image": "shopify://shop_images/IMG_20251216_011831.jpg",
+            "link": "shopify://pages/messiahheaven"
+          }
+        },
         "logo_XCTaWx": {
           "type": "logo",
           "settings": {
@@ -168,6 +177,7 @@
         }
       },
       "block_order": [
+        "logo_UTwzKm",
         "logo_XCTaWx",
         "logo_fAmmCG",
         "logo_wkyLT7"
