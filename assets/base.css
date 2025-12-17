@@ -59,6 +59,9 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
   .mobile-toggle {
     display: none;
   }
+  .desktop-nav .cart-icon {
+    display: block;
+  }
 }
 .nav-link:hover { color: var(--swear-white); text-decoration: underline; text-decoration-thickness: 2px; }
 
@@ -161,4 +164,14 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
   background: transparent; 
   color: var(--swear-white); 
   border-color: var(--swear-white); 
+}
+
+/* --- CART ICON --- */
+.cart-icon i {
+  color: var(--swear-white);
+  font-size: 24px;
+}
+
+.desktop-nav .cart-icon {
+  display: none;
 }

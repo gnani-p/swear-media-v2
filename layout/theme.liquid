@@ -17,8 +17,8 @@
     <meta property="og:title" content="{{ page_title }} | SWEAR MEDIA">
     <meta property="og:description" content="SWEAR Media is a creative agency specializing in film, photography, and brand development. We create compelling visual content that tells your story.">
     {% if page_image %}
-    <meta property="og:image" content="http:{{ page_image | img_url: 'master' }}">
-    <meta property="og:image:secure_url" content="https:{{ page_image | img_url: 'master' }}">
+    <meta property="og:image" content="http:{{ page_image | image_url: 'master' }}">
+    <meta property="og:image:secure_url" content="https:{{ page_image | image_url: 'master' }}">
     {% endif %}
 
     <!-- Twitter -->
@@ -27,13 +27,16 @@
     <meta property="twitter:title" content="{{ page_title }} | SWEAR MEDIA">
     <meta property="twitter:description" content="SWEAR Media is a creative agency specializing in film, photography, and brand development. We create compelling visual content that tells your story.">
     {% if page_image %}
-    <meta property="twitter:image" content="http:{{ page_image | img_url: 'master' }}">
+    <meta property="twitter:image" content="http:{{ page_image | image_url: 'master' }}">
     {% endif %}
 
     <!-- Google Fonts: Oswald (Stencil) & Space Mono (Code) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Oswald:wght@700&family=Space+Mono:wght@400;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
 
     <!-- Global CSS -->
     {{ 'base.css' | asset_url | stylesheet_tag }}

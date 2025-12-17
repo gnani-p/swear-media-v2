@@ -23,7 +23,7 @@
     </a>
 
     <!-- Desktop Nav -->
-    <nav class="desktop-nav">
+    <nav class="desktop-nav items-center">
       <!-- You can manage these links in Shopify Admin > Navigation > Main Menu -->
       {% if template.suffix == 'messiahheaven' %}
         <a href="/collections/new-arrivals" class="nav-link font-mono uppercase">NEW ARRIVALS</a>
@@ -37,13 +37,21 @@
         <a href="https://swearmedia.com/pages/store" class="nav-link font-mono uppercase">Shop</a>
         <a href="/pages/contact" class="nav-link font-mono uppercase">Contact</a>
       {% endif %}
+      <a href="/cart" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
     </nav>
     
     <!-- Mobile Toggle -->
-    <div class="mobile-toggle">
-      <div class="bar1"></div>
-      <div class="bar2"></div>
-      <div class="bar3"></div>
+    <div class="mobile-toggle flex items-center" style="gap: 1rem;">
+      <div class="hamburger">
+        <div class="bar1"></div>
+        <div class="bar2"></div>
+        <div class="bar3"></div>
+      </div>
+      <a href="/cart" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
     </div>
   </div>
 </header>
@@ -51,8 +59,8 @@
 {% include 'side-menu' %}
 
 <script>
-  document.querySelector('.mobile-toggle').addEventListener('click', function() {
-    this.classList.toggle('change');
+  document.querySelector('.hamburger').addEventListener('click', function() {
+    this.parentElement.classList.toggle('change');
     document.getElementById('side-menu').classList.toggle('open');
   });
 
