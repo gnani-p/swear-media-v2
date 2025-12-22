@@ -188,6 +188,4 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
   font-size: 24px;
 }
 
-.desktop-nav .cart-icon {
-  display: none;
-}
+
