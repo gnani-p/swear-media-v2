@@ -59,6 +59,20 @@
       "instagram-grid-portraits": {
         "type": "instagram-grid-portraits",
         "blocks": {
+          "instagram_post_cTUkBK": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/605953891_18251640859295868_473514626238519236_n.jpg",
+              "post_url": "https://www.instagram.com/p/DSsVx3_Db80/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
+          "instagram_post_FYtfCw": {
+            "type": "instagram_post",
+            "settings": {
+              "image": "shopify://shop_images/589905051_18251541277295868_444487059631255519_n.jpg",
+              "post_url": "https://www.instagram.com/p/DSqDWPOAW-E/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=="
+            }
+          },
           "instagram_post_DC4mwM": {
             "type": "instagram_post",
             "settings": {
@@ -152,6 +166,8 @@
           }
         },
         "block_order": [
+          "instagram_post_cTUkBK",
+          "instagram_post_FYtfCw",
           "instagram_post_DC4mwM",
           "instagram_post_HgnyPr",
           "instagram_post_VnDr7G",
@@ -263,6 +279,10 @@
           "show_title": true,
           "show_view_all_link": false
         }
+      },
+      "template-collection-portraits": {
+        "type": "template-collection-portraits",
+        "settings": {}
       }
     },
     "content_for_index": []
