@@ -41,6 +41,15 @@
             "link": "shopify://pages/laurens-vintage-🎱"
           }
         },
+        "card_9t4ia7": {
+          "type": "card",
+          "settings": {
+            "image": "shopify://shop_images/590387567_18251541286295868_2364835191556015328_n.jpg",
+            "title": "MESSIAHHEAVEN x swear",
+            "description": "Shop MESSIAHHEAVEN - Coming Soon",
+            "link": "shopify://pages/messiahheaven"
+          }
+        },
         "card_qYNpD9": {
           "type": "card",
           "settings": {
@@ -80,6 +89,7 @@
       },
       "block_order": [
         "card_JKK3A9",
+        "card_9t4ia7",
         "card_qYNpD9",
         "card_Bj3RmK",
         "card_aJd8xm",
