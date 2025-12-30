@@ -49,23 +49,13 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
   border-bottom: 1px solid rgba(77, 77, 77, 0.5);
 }
 .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
-.desktop-nav { display: none; }
 
-@media (min-width: 768px) {
-  .desktop-nav {
-    display: flex;
-    gap: 20px; /* Add some spacing between links */
-  }
-  .mobile-toggle {
-    display: none;
-  }
-  .desktop-nav .cart-icon {
-    display: block;
-  }
-}
+/* Desktop Nav Styles Removed as element is gone. 
+   Mobile toggle is now persistent. */
+
 .nav-link:hover { color: var(--swear-white); text-decoration: underline; text-decoration-thickness: 2px; }
 
-/* --- Mobile Nav --- */
+/* --- Mobile Nav / Hamburger --- */
 .header-actions {
   display: flex;
   align-items: center;
@@ -99,17 +89,7 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
   transform: rotate(45deg) translate(-5px, -6px);
 }
 
-@media (min-width: 768px) {
-  .desktop-nav {
-    display: flex;
-    gap: 20px; /* Add some spacing between links */
-    align-items: center; /* Align items vertically in desktop nav */
-  }
-  .header-actions {
-    display: none; /* Hide the entire header-actions div on desktop */
-  }
-}
-
+/* Removed media query hiding mobile-toggle on desktop */
 
 /* --- ANIMATIONS --- */
 /* Film Grain */
