@@ -11,48 +11,57 @@
       color: white; /* Adjust text color for visibility on transparent header */
     }
   </style>
-  <div class="container flex justify-between items-center" style="height: 64px;">
-    <!-- Logo -->
-    <a href="{% if template.suffix == 'messiahheaven' %}/pages/messiahheaven{% else %}/{% endif %}" class="logo font-stencil">
-      {% if template.suffix == 'messiahheaven' %}
-        <img src="https://cdn.shopify.com/s/files/1/0597/6509/6512/files/IMG_20251212_230335.png?v=1765598651" alt="MESSIAHHEAVEN" style="max-height: 50px;">
-        <a href="https://swearmedia.com" class="swear-media-link" style="color: white; text-decoration: none;">x SWEAR MEDIA</a>
-      {% else %}
-        "SWEAR<span class="text-accent">MEDIA"</span>
-      {% endif %}
-    </a>
-
-    <!-- Desktop Nav -->
-    <nav class="desktop-nav items-center">
-      <!-- You can manage these links in Shopify Admin > Navigation > Main Menu -->
-      {% if template.suffix == 'messiahheaven' %}
-        <a href="/collections/new-arrivals" class="nav-link font-mono uppercase">NEW ARRIVALS</a>
-        <a href="/collections/all" class="nav-link font-mono uppercase">SHOP</a>
-        <a href="/pages/about" class="nav-link font-mono uppercase">ABOUT</a>
-        <a href="/pages/contact" class="nav-link font-mono uppercase">CONTACT</a>
-      {% else %}
-        <a href="/collections/films" class="nav-link font-mono uppercase">Films</a>
-        <a href="/pages/services" class="nav-link font-mono uppercase">Services</a>
-        <a href="/pages/portraits" class="nav-link font-mono uppercase">Portraits</a>
-        <a href="https://swearmedia.com/pages/store" class="nav-link font-mono uppercase">Shop</a>
-        <a href="/pages/contact" class="nav-link font-mono uppercase">Contact</a>
-      {% endif %}
-      <a href="/cart" class="cart-icon">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
-    </nav>
-    
-    <!-- Mobile Toggle and Cart Icon Wrapper -->
-    <div class="header-actions flex items-center">
-      <a href="/cart" class="cart-icon">
-        <i class="fas fa-shopping-cart"></i>
-      </a>
+  <div class="container flex justify-between items-center relative" style="height: 64px;">
+    <!-- Left: Mobile Toggle -->
+    <div class="nav-left flex items-center">
       <div class="mobile-toggle flex items-center" style="gap: 1rem;">
         <div class="hamburger">
           <div class="bar1"></div>
           <div class="bar2"></div>
           <div class="bar3"></div>
         </div>
+      </div>
+    </div>
+
+    <!-- Center: Logo -->
+    <div class="nav-center absolute" style="left: 50%; transform: translateX(-50%); text-align: center;">
+      <a href="{% if template.suffix == 'messiahheaven' %}/pages/messiahheaven{% else %}/{% endif %}" class="logo font-stencil">
+        {% if template.suffix == 'messiahheaven' %}
+          <img src="https://cdn.shopify.com/s/files/1/0597/6509/6512/files/IMG_20251212_230335.png?v=1765598651" alt="MESSIAHHEAVEN" style="max-height: 50px;">
+          <a href="https://swearmedia.com" class="swear-media-link" style="color: white; text-decoration: none;">x SWEAR MEDIA</a>
+        {% else %}
+          "SWEAR<span class="text-accent">MEDIA"</span>
+        {% endif %}
+      </a>
+    </div>
+
+    <!-- Right: Desktop Nav & Mobile Cart -->
+    <div class="nav-right flex items-center">
+      <!-- Desktop Nav -->
+      <nav class="desktop-nav items-center">
+        <!-- You can manage these links in Shopify Admin > Navigation > Main Menu -->
+        {% if template.suffix == 'messiahheaven' %}
+          <a href="/collections/new-arrivals" class="nav-link font-mono uppercase">NEW ARRIVALS</a>
+          <a href="/collections/all" class="nav-link font-mono uppercase">SHOP</a>
+          <a href="/pages/about" class="nav-link font-mono uppercase">ABOUT</a>
+          <a href="/pages/contact" class="nav-link font-mono uppercase">CONTACT</a>
+        {% else %}
+          <a href="/collections/films" class="nav-link font-mono uppercase">Films</a>
+          <a href="/pages/services" class="nav-link font-mono uppercase">Services</a>
+          <a href="/pages/portraits" class="nav-link font-mono uppercase">Portraits</a>
+          <a href="https://swearmedia.com/pages/store" class="nav-link font-mono uppercase">Shop</a>
+          <a href="/pages/contact" class="nav-link font-mono uppercase">Contact</a>
+        {% endif %}
+        <a href="/cart" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
+      </nav>
+      
+      <!-- Mobile Cart Icon Wrapper (Visible only on mobile via CSS on header-actions) -->
+      <div class="header-actions flex items-center">
+        <a href="/cart" class="cart-icon">
+          <i class="fas fa-shopping-cart"></i>
+        </a>
       </div>
     </div>
   </div>
