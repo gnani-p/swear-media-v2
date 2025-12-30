@@ -12,7 +12,7 @@
     }
   </style>
   <div class="container flex justify-between items-center relative" style="height: 64px;">
-    <!-- Left: Mobile Toggle -->
+    <!-- Left: Mobile Toggle & Desktop Nav -->
     <div class="nav-left flex items-center">
       <div class="mobile-toggle flex items-center" style="gap: 1rem;">
         <div class="hamburger">
@@ -21,23 +21,8 @@
           <div class="bar3"></div>
         </div>
       </div>
-    </div>
-
-    <!-- Center: Logo -->
-    <div class="nav-center absolute" style="left: 50%; transform: translateX(-50%); text-align: center;">
-      <a href="{% if template.suffix == 'messiahheaven' %}/pages/messiahheaven{% else %}/{% endif %}" class="logo font-stencil">
-        {% if template.suffix == 'messiahheaven' %}
-          <img src="https://cdn.shopify.com/s/files/1/0597/6509/6512/files/IMG_20251212_230335.png?v=1765598651" alt="MESSIAHHEAVEN" style="max-height: 50px;">
-          <a href="https://swearmedia.com" class="swear-media-link" style="color: white; text-decoration: none;">x SWEAR MEDIA</a>
-        {% else %}
-          "SWEAR<span class="text-accent">MEDIA"</span>
-        {% endif %}
-      </a>
-    </div>
-
-    <!-- Right: Desktop Nav & Mobile Cart -->
-    <div class="nav-right flex items-center">
-      <!-- Desktop Nav -->
+      
+      <!-- Desktop Nav (Links moved here) -->
       <nav class="desktop-nav items-center">
         <!-- You can manage these links in Shopify Admin > Navigation > Main Menu -->
         {% if template.suffix == 'messiahheaven' %}
@@ -52,17 +37,26 @@
           <a href="https://swearmedia.com/pages/store" class="nav-link font-mono uppercase">Shop</a>
           <a href="/pages/contact" class="nav-link font-mono uppercase">Contact</a>
         {% endif %}
-        <a href="/cart" class="cart-icon">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
       </nav>
-      
-      <!-- Mobile Cart Icon Wrapper (Visible only on mobile via CSS on header-actions) -->
-      <div class="header-actions flex items-center">
-        <a href="/cart" class="cart-icon">
-          <i class="fas fa-shopping-cart"></i>
-        </a>
-      </div>
+    </div>
+
+    <!-- Center: Logo -->
+    <div class="nav-center absolute" style="left: 50%; transform: translateX(-50%); text-align: center;">
+      <a href="{% if template.suffix == 'messiahheaven' %}/pages/messiahheaven{% else %}/{% endif %}" class="logo font-stencil">
+        {% if template.suffix == 'messiahheaven' %}
+          <img src="https://cdn.shopify.com/s/files/1/0597/6509/6512/files/IMG_20251212_230335.png?v=1765598651" alt="MESSIAHHEAVEN" style="max-height: 50px;">
+          <a href="https://swearmedia.com" class="swear-media-link" style="color: white; text-decoration: none;">x SWEAR MEDIA</a>
+        {% else %}
+          "SWEAR<span class="text-accent">MEDIA"</span>
+        {% endif %}
+      </a>
+    </div>
+
+    <!-- Right: Cart -->
+    <div class="nav-right flex items-center">
+      <a href="/cart" class="cart-icon">
+        <i class="fas fa-shopping-cart"></i>
+      </a>
     </div>
   </div>
 </header>
