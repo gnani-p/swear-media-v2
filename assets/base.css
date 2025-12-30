@@ -48,6 +48,9 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
   background: var(--swear-black);
   border-bottom: 1px solid rgba(77, 77, 77, 0.5);
 }
+.site-header .container { /* Specific padding for header container */
+  padding: 0 10px; /* Reduced from 20px */
+}
 .logo { font-size: 24px; font-weight: 900; letter-spacing: 2px; }
 
 /* Desktop Nav Styles Removed as element is gone. 
@@ -167,5 +170,6 @@ h1, h2, h3 { font-family: var(--font-stencil); text-transform: uppercase; margin
   color: var(--swear-white);
   font-size: 24px;
 }
+
 
 
